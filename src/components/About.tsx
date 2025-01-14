@@ -49,10 +49,14 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <motion.div className="space-y-6" variants={itemVariants}>
             <p className="text-violet-300 leading-relaxed">
-              I'm an ambitious Machine Learning Engineer with a strong foundation in AI, Data Science, and MLOps. Currently pursuing a Bachelor of Engineering in Computer Science with a specialization in AI and Machine Learning, maintaining a CGPA of 8.6.
+              I'm Mohammed Huzaifah, a Computer Science student and ML Engineer who believes AI should solve real problems, not just look cool on paper. When I'm not training models or debugging code, you'll find me watching Football matches or brainstorming Leetcode or HackerRank problems(yes, I care about making AI actually useful for people!).
             </p>
             <p className="text-violet-300 leading-relaxed">
-              My expertise spans across predictive modeling, clustering models, data analysis, and machine learning algorithms. I've actively participated in Kaggle competitions and solved over 150 problems on LeetCode, continuously refining my skills in applied machine learning and problem-solving.
+              I love turning complex problems into elegant solutions - whether that's building disease prediction platforms or contributing to open-source projects. My hands-on experience ranges from deep learning to MLOps, and I'm always excited to learn new tools and technologies...
+            </p>
+            <p className="text-violet-300 leading-relaxed">
+              Why work with me? I bring a unique blend of technical skills and practical thinking. I don't just build models; I build solutions that matter. My projects in healthcare and my active involvement in hackathons show I can deliver under pressure while keeping the end-user in mind.
+Currently looking for opportunities to create impact through AI - let's build something meaningful together!.
             </p>
           </motion.div>
           <div className="space-y-6">
@@ -79,11 +83,13 @@ export default function About() {
               <p className="text-violet-300">
                 • Latest advancements in AI & Generative Models
                 <br />
-                • MLOps & Cloud Technologies
+                • MLOps & GenAI Technologies
                 <br />
-                • Football (Real Madrid supporter)
+                • Football enthusiast and Real Madrid supporte
                 <br />
                 • Hackathons & Collaborative Projects
+                <br />
+                • Open source development & contributions 
               </p>
             </motion.div>
           </div>
