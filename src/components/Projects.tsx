@@ -5,28 +5,28 @@ const projects = [
   {
     title: "Vocal-Diagnose",
     description: "VocalDiagnose uses AI to analyze voice patterns, enabling early disease detection with over 90% accuracy, revolutionizing accessible and cost-effective health screening.",
-    image: "src/static/vocal.png",
+    image: "https://drive.google.com/file/d/1EgNXnHxXwoG8-2zyOTeAU7EP8umrixId/preview",
     technologies: ["Python", "TensorFlow", "Librosa", "Kaggle", "Matplotlib/Seaborn"],
     github: "https://github.com/Sa1f27/Vocal-Diagnose"
   },
   {
     title: "KidsCare-Pro",
     description: "AI-powered pediatric health solution for monitoring and predicting children's health conditions using advanced machine learning algorithms.",
-    image: "src/static/kids.png",
+    image: "https://drive.google.com/file/d/1EgNXnHxXwoG8-2zyOTeAU7EP8umrixId/preview",
     technologies: ["Python", "TensorFlow", "AWS", "Matplotlib/Seaborn"],
     github: "https://github.com/Sa1f27/KidsCare-Pro"
   },
   {
     title: "Disease Diagnosis",
     description: "High-accuracy disease prediction platform utilizing deep learning and computer vision for early detection and diagnosis.",
-    image: "src/static/disease.png",
+    image: "https://drive.google.com/file/d/1EgNXnHxXwoG8-2zyOTeAU7EP8umrixId/preview",
     technologies: ["PyTorch", "OpenCV", "TensorFlow", "Librosa", "Matplotlib/Seaborn"],
     github: "https://github.com/Sa1f27/Disease-Prediction"
   },
   {
     title: "DocHub-AI",
     description: "A RAG-based multi-agent AI platform revolutionizing access to government services with intelligent document assistance, scheme navigation, and seamless application support.",
-    image: "src/static/dochub.png",
+    image: "https://drive.google.com/file/d/1LWc40C-oVPoFlt9kWeSTvnvFIClBbdtP/preview",
     technologies: ["Python", "TensorFlow", "Flask", "MongoDB"],
     github: "https://github.com/Sa1f27/DocHub-AI"
   }
@@ -51,11 +51,12 @@ export default function Projects() {
               {/* Cyberpunk accent */}
               <div className="absolute -inset-1 bg-gradient-to-r from-violet-500 to-blue-500 opacity-0 
                             group-hover:opacity-20 transition-opacity duration-300" />
-              <img
+              <iframe
                 src={project.image}
-                alt={project.title}
-                className="w-full h-48 object-cover rounded-lg mb-6"
-              />
+                className="w-full h-48 rounded-lg mb-6"
+                allow="autoplay"
+                frameBorder="0"
+              ></iframe>
               <h3 className="text-xl font-semibold text-blue-300 mb-2 relative">
                 {project.title}
               </h3>
@@ -82,14 +83,6 @@ export default function Projects() {
                   <Github size={20} className="mr-1" />
                   Code
                 </a>
-                {/* <a
-                  href={project.preview}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center text-blue-300 hover:text-violet-400"
-                >
-                  Preview
-                </a> */}
               </div>
             </div>
           ))}
