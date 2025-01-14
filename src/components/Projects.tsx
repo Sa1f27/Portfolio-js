@@ -5,14 +5,14 @@ const projects = [
   {
     title: "Vocal-Diagnose",
     description: "VocalDiagnose uses AI to analyze voice patterns, enabling early disease detection with over 90% accuracy, revolutionizing accessible and cost-effective health screening.",
-    image: "https://drive.google.com/file/d/1EgNXnHxXwoG8-2zyOTeAU7EP8umrixId/preview",
+    image: "https://drive.google.com/file/d/18yrfazKk6ELQBW3FFSGagCuhD7zHpBk0/preview",
     technologies: ["Python", "TensorFlow", "Librosa", "Kaggle", "Matplotlib/Seaborn"],
     github: "https://github.com/Sa1f27/Vocal-Diagnose"
   },
   {
     title: "KidsCare-Pro",
     description: "AI-powered pediatric health solution for monitoring and predicting children's health conditions using advanced machine learning algorithms.",
-    image: "https://drive.google.com/file/d/1EgNXnHxXwoG8-2zyOTeAU7EP8umrixId/preview",
+    image: "https://drive.google.com/file/d/1y1BM_AuZdYElUcTwe_4aHCj_FIgSEXbf/preview",
     technologies: ["Python", "TensorFlow", "AWS", "Matplotlib/Seaborn"],
     github: "https://github.com/Sa1f27/KidsCare-Pro"
   },
