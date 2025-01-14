@@ -4,49 +4,41 @@ export default {
   theme: {
     extend: {
       colors: {
-        dark: {
-          50: '#1A1B1E',
-          100: '#141517',
-          200: '#0F1012',
-          300: '#0A0B0C',
-          400: '#050607',
-        },
-        neon: {
-          50: '#F0FDF4',
-          100: '#DCFCE7',
-          200: '#BBF7D0',
-          300: '#86EFAC',
-          400: '#4ADE80',
-          500: '#22C55E',
-          600: '#16A34A',
+        primary: {
+          900: '#0f172a',
+          800: '#1e293b',
+          700: '#334155',
+          600: '#475569',
         },
         accent: {
-          50: '#EEF2FF',
-          100: '#E0E7FF',
-          200: '#C7D2FE',
-          300: '#A5B4FC',
-          400: '#818CF8',
-          500: '#6366F1',
-          600: '#4F46E5',
-        },
+          blue: {
+            400: '#60a5fa',
+            300: '#93c5fd',
+            200: '#bfdbfe',
+          },
+          violet: {
+            500: '#8b5cf6',
+            400: '#a78bfa',
+            300: '#c4b5fd',
+          }
+        }
       },
       fontFamily: {
         sans: ['Space Grotesk', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
       },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'cyberpunk-grid': 'linear-gradient(to right, rgba(139,92,246,0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(139,92,246,0.1) 1px, transparent 1px)',
+      },
       animation: {
-        'gradient': 'gradient 8s linear infinite',
+        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'glow': 'glow 2s ease-in-out infinite alternate',
       },
       keyframes: {
-        gradient: {
-          '0%, 100%': {
-            'background-size': '200% 200%',
-            'background-position': 'left center',
-          },
-          '50%': {
-            'background-size': '200% 200%',
-            'background-position': 'right center',
-          },
+        glow: {
+          '0%': { boxShadow: '0 0 5px rgba(139,92,246,0.5), 0 0 10px rgba(139,92,246,0.3)' },
+          '100%': { boxShadow: '0 0 10px rgba(139,92,246,0.8), 0 0 20px rgba(139,92,246,0.5)' },
         },
       },
     },

@@ -26,9 +26,7 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'bg-black/80 backdrop-blur-lg border-b border-blue-500/20 shadow-[0_0_15px_rgba(96,165,250,0.1)]' 
-          : 'bg-transparent'
+        scrolled ? 'backdrop-blur-lg bg-black/30 border-b border-violet-500/20' : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,7 +37,7 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-violet-400">
+            <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-violet-400 text-transparent bg-clip-text">
               MH
             </span>
           </motion.div>
@@ -50,19 +48,15 @@ export default function Navbar() {
               <motion.a
                 key={item.label}
                 href={item.href}
-                className="text-blue-100 hover:text-blue-300 px-3 py-2 text-sm font-medium 
-                         transition-all duration-300 relative group"
+                className="text-violet-300 hover:text-blue-300 px-3 py-2 text-sm font-medium 
+                         transition-colors relative group rounded-lg hover:bg-blue-950/30"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
               >
                 {item.label}
-                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-violet-400 
-                               transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
-                {/* Glow effect on hover */}
-                <span className="absolute inset-0 rounded-md bg-blue-400/0 group-hover:bg-blue-400/10 
-                               transition-colors duration-300" />
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-400 transform scale-x-0 transition-transform group-hover:scale-x-100" />
               </motion.a>
             ))}
           </div>
@@ -71,9 +65,7 @@ export default function Navbar() {
           <div className="md:hidden flex items-center">
             <motion.button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-blue-300 hover:text-blue-400 focus:outline-none
-                         p-2 rounded-lg bg-blue-950/30 border border-blue-500/20
-                         hover:bg-blue-900/40 transition-colors duration-300"
+              className="text-violet-300 hover:text-blue-300 focus:outline-none"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -87,7 +79,7 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="md:hidden bg-black/95 backdrop-blur-lg border-t border-blue-500/20"
+            className="md:hidden backdrop-blur-lg bg-black/30 border-t border-violet-500/20"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
@@ -98,10 +90,7 @@ export default function Navbar() {
                 <motion.a
                   key={item.label}
                   href={item.href}
-                  className="text-blue-200 hover:text-blue-400 hover:bg-blue-950/50
-                           block px-3 py-2 rounded-md text-base font-medium
-                           border border-transparent hover:border-blue-500/20
-                           transition-all duration-300"
+                  className="text-violet-300 hover:text-blue-300 hover:bg-blue-950/30 block px-3 py-2 rounded-lg text-base font-medium"
                   onClick={() => setIsOpen(false)}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}

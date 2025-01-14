@@ -28,28 +28,21 @@ export default function Hero() {
   ];
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-violet-950 to-black pt-16">
-      {/* Background Gradient Effects */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.1)_0%,transparent_65%)]" />
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+    <section id="home" className="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-gradient-to-b from-violet-950/50 to-black/50" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.1)_0%,transparent_100%)]" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative z-10"
         >
-          <motion.h1 
-            className="text-5xl md:text-7xl font-bold mb-6 text-transparent bg-clip-text 
-                       bg-gradient-to-r from-blue-400 to-violet-400"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-violet-400 text-transparent bg-clip-text">
             Mohammed Huzaifah
-          </motion.h1>
-          
-          <div className="text-xl md:text-2xl text-blue-200 mb-8 h-12">
+          </h1>
+          <div className="text-xl md:text-2xl text-violet-300 mb-8 h-12">
             <TypeAnimation
               sequence={[
                 'Machine Learning Engineer',
@@ -64,7 +57,6 @@ export default function Hero() {
               repeat={Infinity}
             />
           </div>
-
           <motion.div
             className="flex justify-center space-x-6"
             initial={{ opacity: 0 }}
@@ -79,39 +71,33 @@ export default function Hero() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative p-2"
+                  className="text-blue-400 hover:text-blue-300 transition-colors p-2 rounded-lg
+                           backdrop-blur-sm bg-blue-950/20 border border-blue-500/20
+                           hover:bg-blue-900/30 hover:border-blue-400/30"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.7 + index * 0.1 }}
                 >
-                  <div className="absolute inset-0 bg-blue-500/20 rounded-lg blur-md transition-opacity opacity-0 group-hover:opacity-100" />
-                  <Icon className="relative z-10 w-6 h-6 text-blue-400 transition-colors duration-300 group-hover:text-blue-300" />
+                  <Icon size={24} />
                 </motion.a>
               );
             })}
           </motion.div>
-
           <motion.div
             className="mt-12"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2 }}
           >
-            <motion.a
+            <a
               href="#contact"
-              className="group relative inline-block px-8 py-3 text-blue-400 
-                         overflow-hidden rounded-full transition-all duration-300
-                         border border-blue-500/50 hover:border-blue-400
-                         bg-blue-950/20 hover:bg-blue-900/30
-                         shadow-[0_0_15px_rgba(96,165,250,0.15)] 
-                         hover:shadow-[0_0_30px_rgba(96,165,250,0.3)]"
-              whileHover={{ scale: 1.05 }}
+              className="inline-block px-8 py-3 text-blue-400 border border-blue-500/20 rounded-full
+                         backdrop-blur-sm bg-blue-950/20 hover:bg-blue-900/30 hover:border-blue-400/30
+                         transition-all duration-300 hover:scale-105"
             >
-              <span className="relative z-10">Get in Touch</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-violet-400/20 
-                            opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </motion.a>
+              Get in Touch
+            </a>
           </motion.div>
         </motion.div>
       </div>

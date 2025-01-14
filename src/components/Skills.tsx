@@ -1,83 +1,84 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code2, Brain, Cloud } from 'lucide-react';
+import { useInView } from 'react-intersection-observer';
 
 const skillCategories = [
   {
     title: "Programming Languages",
-    icon: <Code2 className="w-6 h-6" />,
-    skills: ["Python", "C/C++", "Java", "JavaScript"],
-    description: "Expertise in multiple programming paradigms and language ecosystems"
+    skills: ["Python", "C/C++", "Java", "JavaScript"]
   },
   {
     title: "ML & DL Frameworks",
-    icon: <Brain className="w-6 h-6" />,
-    skills: ["TensorFlow", "PyTorch", "Scikit-learn", "Keras"],
-    description: "Deep experience with modern machine learning and deep learning frameworks"
+    skills: ["TensorFlow", "PyTorch", "Scikit-learn", "Keras"]
   },
   {
     title: "Cloud & MLOps",
-    icon: <Cloud className="w-6 h-6" />,
-    skills: ["AWS", "Docker", "MLflow", "Kubernetes"],
-    description: "Proficient in cloud infrastructure and ML deployment pipelines"
-  }
+    skills: ["AWS", "Docker", "MLflow", "Kubernetes"]
+  },
 ];
 
 export default function Skills() {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   return (
-    <section className="py-20 bg-gradient-to-b from-violet-950 to-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.h2 
-          className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-violet-400 mb-12 text-center"
+    <section id="skills" className="py-20 relative">
+      <div className="absolute inset-0 bg-gradient-to-b from-black to-violet-950/30" />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <motion.h2
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          animate={inView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-violet-400 mb-12 text-center"
+        >
+          Skills
+        </motion.h2>
+        
+        <motion.div
+          ref={ref}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.8 }}
         >
-          Technical Expertise
-        </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group backdrop-blur-sm p-6 rounded-xl transition-all duration-300
-                         bg-black/40 border border-violet-500/20 hover:bg-violet-950/30
-                         shadow-[0_0_15px_rgba(139,92,246,0.15)] hover:shadow-[0_0_30px_rgba(139,92,246,0.3)]"
+              className="backdrop-blur-sm rounded-xl p-6 bg-blue-950/20 border border-blue-500/20
+                         hover:bg-blue-900/30 hover:border-blue-400/30 transition-all duration-300
+                         group relative overflow-hidden"
+              initial={{ opacity: 0, x: -20 }}
+              animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
             >
-              <div className="flex items-center space-x-4 mb-6">
-                <div className="p-3 rounded-lg transition-colors duration-300
-                              bg-blue-500/10 text-blue-400 group-hover:text-blue-300
-                              shadow-[0_0_10px_rgba(96,165,250,0.2)]">
-                  {category.icon}
-                </div>
-                <h3 className="text-xl font-semibold text-blue-100 group-hover:text-white transition-colors duration-300">
-                  {category.title}
-                </h3>
-              </div>
+              {/* Cyberpunk accent */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-violet-500 to-blue-500 opacity-0 
+                            group-hover:opacity-20 transition-opacity duration-300" />
               
-              <p className="text-violet-300 mb-6 text-sm">
-                {category.description}
-              </p>
-
-              <div className="grid grid-cols-2 gap-3">
+              <h3 className="text-xl font-semibold text-blue-300 mb-6 relative">
+                {category.title}
+              </h3>
+              
+              <div className="space-y-3 relative">
                 {category.skills.map((skill, skillIndex) => (
                   <motion.div
                     key={skillIndex}
-                    whileHover={{ scale: 1.05 }}
-                    className="px-3 py-2 border border-blue-500/20 rounded-lg 
-                              text-sm transition-all duration-300 flex items-center justify-center
-                              bg-blue-950/20 text-blue-300 hover:bg-blue-900/30 hover:text-blue-200
-                              hover:shadow-[0_0_15px_rgba(96,165,250,0.2)]"
+                    className="flex items-center space-x-2"
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
+                    transition={{ duration: 0.3, delay: index * 0.1 + skillIndex * 0.1 }}
                   >
-                    {skill}
+                    <span className="w-2 h-2 bg-violet-400 rounded-full" />
+                    <span className="text-violet-300">{skill}</span>
                   </motion.div>
                 ))}
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
