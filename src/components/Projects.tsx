@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, ExternalLink } from 'lucide-react';
+import { Github } from 'lucide-react';
 
 const projects = [
   {
@@ -8,7 +8,7 @@ const projects = [
     image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80",
     technologies: ["Python", "TensorFlow", "AWS", "Docker"],
     github: "https://github.com/Sa1f27",
-    demo: "#"
+    preview: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80"
   },
   {
     title: "SoulScan",
@@ -16,7 +16,7 @@ const projects = [
     image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80",
     technologies: ["PyTorch", "OpenCV", "MLflow", "Azure"],
     github: "https://github.com/Sa1f27",
-    demo: "#"
+    preview: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80"
   },
   {
     title: "AI Recommendation Engine",
@@ -24,65 +24,68 @@ const projects = [
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80",
     technologies: ["Python", "TensorFlow", "Flask", "MongoDB"],
     github: "https://github.com/Sa1f27",
-    demo: "#"
+    preview: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80"
   }
 ];
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-20 bg-cream-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-olive-600 mb-12 text-center">
+    <section id="projects" className="py-20 relative">
+      <div className="absolute inset-0 bg-gradient-to-b from-black to-violet-950/30" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-violet-400 mb-12 text-center">
           Projects
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+              className="backdrop-blur-sm rounded-xl p-6 bg-blue-950/20 border border-blue-500/20
+                         hover:bg-blue-900/30 hover:border-blue-400/30 transition-all duration-300
+                         group relative overflow-hidden"
             >
+              {/* Cyberpunk accent */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-violet-500 to-blue-500 opacity-0 
+                            group-hover:opacity-20 transition-opacity duration-300" />
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-48 object-cover"
+                className="w-full h-48 object-cover rounded-lg mb-6"
               />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-olive-600 mb-2">
-                  {project.title}
-                </h3>
-                <p className="text-olive-700 mb-4">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="px-3 py-1 bg-olive-100 text-olive-600 rounded-full text-sm"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex space-x-4">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center text-olive-600 hover:text-olive-800"
+              <h3 className="text-xl font-semibold text-blue-300 mb-2 relative">
+                {project.title}
+              </h3>
+              <p className="text-violet-300 mb-4 relative">
+                {project.description}
+              </p>
+              <div className="flex flex-wrap gap-2 mb-4 relative">
+                {project.technologies.map((tech, techIndex) => (
+                  <span
+                    key={techIndex}
+                    className="px-3 py-1 bg-violet-500 text-blue-200 rounded-full text-sm"
                   >
-                    <Github size={20} className="mr-1" />
-                    Code
-                  </a>
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center text-olive-600 hover:text-olive-800"
-                  >
-                    <ExternalLink size={20} className="mr-1" />
-                    Demo
-                  </a>
-                </div>
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              <div className="flex space-x-4 relative">
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center text-blue-300 hover:text-violet-400"
+                >
+                  <Github size={20} className="mr-1" />
+                  Code
+                </a>
+                <a
+                  href={project.preview}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center text-blue-300 hover:text-violet-400"
+                >
+                  Preview
+                </a>
               </div>
             </div>
           ))}
