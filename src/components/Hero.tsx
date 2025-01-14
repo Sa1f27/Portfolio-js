@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Github, Linkedin, Mail, Phone, FileText, X } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone, FileText, X, Download } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 
@@ -34,6 +34,12 @@ export default function Hero() {
     },
   ];
 
+  const handleDownloadResume = () => {
+    // Replace this URL with your actual resume download URL
+    const resumeUrl = "https://drive.google.com/uc?export=download&id=1EvyvcJoLZDoNe81qnk8KXDkkB3Xu6WHJ";
+    window.open(resumeUrl, '_blank');
+  };
+
   return (
     <>
       <section id="home" className="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
@@ -53,11 +59,11 @@ export default function Hero() {
             <div className="text-xl md:text-2xl text-violet-300 mb-8 h-12">
               <TypeAnimation
                 sequence={[
-                  'Machine Learning Engineer',
+                  'MLOps Engineer',
                   2000,
-                  'AI Enthusiast',
+                  'GenAI Enthusiast',
                   2000,
-                  'Deep Learning Specialist',
+                  'ML / Deep Learning Specialist',
                   2000,
                 ]}
                 wrapper="span"
@@ -80,13 +86,14 @@ export default function Hero() {
                       onClick={() => setIsResumeOpen(true)}
                       className="text-blue-400 hover:text-blue-300 transition-colors p-2 rounded-lg
                                backdrop-blur-sm bg-blue-950/20 border border-blue-500/20
-                               hover:bg-blue-900/30 hover:border-blue-400/30"
+                               hover:bg-blue-900/30 hover:border-blue-400/30 flex flex-col items-center gap-2"
                       whileHover={{ scale: 1.1, rotate: 5 }}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.7 + index * 0.1 }}
                     >
                       <Icon size={24} />
+                      <span className="text-xs font-medium">{link.label}</span>
                     </motion.button>
                   );
                 }
@@ -98,13 +105,14 @@ export default function Hero() {
                     rel="noopener noreferrer"
                     className="text-blue-400 hover:text-blue-300 transition-colors p-2 rounded-lg
                              backdrop-blur-sm bg-blue-950/20 border border-blue-500/20
-                             hover:bg-blue-900/30 hover:border-blue-400/30"
+                             hover:bg-blue-900/30 hover:border-blue-400/30 flex flex-col items-center gap-2"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.7 + index * 0.1 }}
                   >
                     <Icon size={24} />
+                    <span className="text-xs font-medium">{link.label}</span>
                   </motion.a>
                 );
               })}
@@ -137,14 +145,25 @@ export default function Hero() {
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
         >
           <div className="relative w-full max-w-4xl bg-blue-950/90 rounded-lg border border-blue-500/20 p-1">
-            <button
-              onClick={() => setIsResumeOpen(false)}
-              className="absolute right-2 top-2 text-blue-400 hover:text-blue-300 p-1 rounded-lg
+            <div className="absolute right-2 top-2 flex gap-2 z-10">
+              <button
+                onClick={handleDownloadResume}
+                className="text-blue-400 hover:text-blue-300 p-1 rounded-lg
                          backdrop-blur-sm bg-blue-950/20 border border-blue-500/20
-                         hover:bg-blue-900/30 hover:border-blue-400/30 z-10"
-            >
-              <X size={20} />
-            </button>
+                         hover:bg-blue-900/30 hover:border-blue-400/30 flex items-center gap-1"
+              >
+                <Download size={20} />
+                <span className="text-xs">Download</span>
+              </button>
+              <button
+                onClick={() => setIsResumeOpen(false)}
+                className="text-blue-400 hover:text-blue-300 p-1 rounded-lg
+                         backdrop-blur-sm bg-blue-950/20 border border-blue-500/20
+                         hover:bg-blue-900/30 hover:border-blue-400/30"
+              >
+                <X size={20} />
+              </button>
+            </div>
             <iframe
               src="https://drive.google.com/file/d/1EvyvcJoLZDoNe81qnk8KXDkkB3Xu6WHJ/preview"
               className="w-full h-[80vh] rounded-lg"
