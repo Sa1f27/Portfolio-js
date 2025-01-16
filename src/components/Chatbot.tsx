@@ -1,11 +1,73 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, useEffect} from 'react';
 import ReactMarkdown from 'react-markdown';
+import { Send, Loader2 } from 'lucide-react';
 
-const Chatbot = () => {
+const ParticleEffect = () => {
+  const [particles, setParticles] = useState([]);
+  
+  useEffect(() => {
+    const createParticle = () => ({
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight,
+      size: Math.random() * 3 + 1,
+      speedX: (Math.random() - 0.5) * 2,
+      speedY: (Math.random() - 0.5) * 2,
+      opacity: Math.random() * 0.5 + 0.3,
+    });
+
+    const particleCount = 30;
+    const initialParticles = Array.from({ length: particleCount }, createParticle);
+    setParticles(initialParticles);
+
+    const animateParticles = () => {
+      setParticles(prevParticles =>
+        prevParticles.map(particle => ({
+          ...particle,
+          x: (particle.x + particle.speedX + window.innerWidth) % window.innerWidth,
+          y: (particle.y + particle.speedY + window.innerHeight) % window.innerHeight,
+        }))
+      );
+    };
+
+    const interval = setInterval(animateParticles, 50);
+    return () => clearInterval(interval);
+  }, []);
+ 
+    return (
+    <div className="absolute inset-0 pointer-events-none">
+      {particles.map((particle, index) => (
+        <div
+          key={index}
+          className="absolute rounded-full bg-blue-400"
+          style={{
+            left: `${particle.x}px`,
+            top: `${particle.y}px`,
+            width: `${particle.size}px`,
+            height: `${particle.size}px`,
+            opacity: particle.opacity,
+            transform: 'translate(-50%, -50%)',
+          }}
+        />
+      ))}
+    </div>
+  );
+};
+
+export default function Chatbot() {
   const [userInput, setUserInput] = useState('');
   const [response, setResponse] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
 
 // Your bio information
 const bioInfo = `
@@ -17,6 +79,10 @@ Personal Information
 
 - Full Name: Mohammed Huzaifah
 - Gender: Male
+- Date of Birth: 27th March 2003
+- Age: 22
+- Location: Hyderabad, Telangana, India
+
 - Relationship Status: Single
 - Languages:
   - English (Professional)
@@ -120,8 +186,6 @@ Phone Numbers:
 Professional Profiles:
 GitHub: github.com/Sa1f27  
 LinkedIn: linkedin.com/in/huzaifah-27o3  
-Medium: medium.com/@huzaif027  
-Twitter: @huzaifah_ai  
 
 Location: Hyderabad, Telangana, India  
 
@@ -152,14 +216,14 @@ const askGroq = async (inputText: string) => {
     my bio:
     ${bioInfo}
     Task:
-    Respond to the following query from a recruiter or visitor in a professional and confident tone:
+    Respond to the following query from a recruiter or visitor in a professional and confident and casual tone:
     ${inputText}
     Guidelines:
     Provide responses that are clear, to the point, and professional.
     Use bullet points if applicable to ensure readability.
     If specific details are unavailable, share my contact information for further discussion.
-    Showcase my strengths, experiences, and relevant achievements wherever relevant.
-    Craft the best possible response to reflect my skills and professionalism.
+    Showcase my strengths and relevant achievements if necessary.
+    Craft the best possible concise response to reflect my skills and professionalism.
   `;
 
   try {
@@ -205,18 +269,37 @@ const askGroq = async (inputText: string) => {
   };
 
   return (
-    <section className="py-20 relative">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden py-20">
+      {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-black to-violet-950/30" />
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-violet-400 mb-12 text-center">
-          Chat with My Portfolio
+      
+      {/* Animated Particles */}
+      <ParticleEffect />
+
+      {/* Cyberpunk Grid with Mouse Parallax */}
+      <div 
+        className="absolute inset-0 opacity-10"
+        style={{
+          backgroundImage: 'radial-gradient(circle at center, rgba(66, 153, 225, 0.2) 1px, transparent 1px)',
+          backgroundSize: '30px 30px',
+          transform: `translate(${(mousePosition.x - window.innerWidth / 2) * 0.02}px, ${(mousePosition.y - window.innerHeight / 2) * 0.02}px)`,
+        }}
+      />
+
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        {/* Title with Enhanced Glitch Effect */}
+        <h2 className="text-4xl font-bold mb-12 text-center relative">
+          <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-violet-400">
+            Ask anything about me!
+          </span>
         </h2>
         
         <div className="backdrop-blur-sm rounded-xl p-6 bg-blue-950/20 border border-blue-500/20
-                       hover:bg-blue-900/30 hover:border-blue-400/30 transition-all duration-300
-                       group relative overflow-hidden">
-          <div className="absolute -inset-1 bg-gradient-to-r from-violet-500 to-blue-500 opacity-0 
-                         group-hover:opacity-20 transition-opacity duration-300" />
+                     hover:bg-blue-900/30 hover:border-blue-400/30 transition-all duration-300
+                     group relative">
+          {/* Animated Border Gradient */}
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-violet-500/20 to-blue-500/20 opacity-0 
+                       group-hover:opacity-100 transition-opacity duration-500 rounded-xl animate-pulse" />
           
           <form onSubmit={handleSubmit} className="space-y-4 relative">
             <div className="flex gap-2">
@@ -224,10 +307,10 @@ const askGroq = async (inputText: string) => {
                 type="text"
                 value={userInput}
                 onChange={(e) => setUserInput(e.target.value)}
-                placeholder="Ask any question about my portfolio!"
+                placeholder="Ask anything about my experience, skills, or projects!"
                 className="flex-1 px-4 py-3 rounded-lg bg-blue-950/40 border border-blue-500/30
-                           text-blue-200 placeholder-blue-400/50 focus:outline-none focus:border-violet-400/50
-                           transition-all duration-300"
+                         text-blue-200 placeholder-blue-400/50 focus:outline-none focus:border-violet-400/50
+                         transition-all duration-300 hover:border-blue-400/40"
                 disabled={isLoading}
               />
               <button
@@ -235,21 +318,35 @@ const askGroq = async (inputText: string) => {
                 disabled={isLoading}
                 className="px-6 py-3 bg-gradient-to-r from-blue-500 to-violet-500 text-blue-100 rounded-lg
                          hover:from-blue-400 hover:to-violet-400 disabled:opacity-50 disabled:cursor-not-allowed
-                         transition-all duration-300 font-medium"
+                         transition-all duration-300 font-medium flex items-center gap-2 hover:scale-105"
               >
-                {isLoading ? 'Processing...' : 'Ask'}
+                {isLoading ? (
+                  <>
+                    <Loader2 size={18} className="animate-spin" />
+                    <span>Processing...</span>
+                  </>
+                ) : (
+                  <>
+                    <Send size={18} className="group-hover:translate-x-1 transition-transform" />
+                    <span>Ask</span>
+                  </>
+                )}
               </button>
             </div>
 
             {error && (
-              <div className="text-red-400 mt-2 px-3 py-2 rounded-lg bg-red-900/20 border border-red-500/30">
+              <div className="text-red-400 mt-2 px-3 py-2 rounded-lg bg-red-900/20 border border-red-500/30
+                           animate-fade-in flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-red-400 animate-pulse" />
                 {error}
               </div>
             )}
 
             {response && (
-              <div className="mt-6 px-4 py-3 rounded-lg bg-blue-950/40 border border-blue-500/30">
-                <div className="markdown-content">
+              <div className="mt-6 px-4 py-3 rounded-lg bg-blue-950/40 border border-blue-500/30
+                           animate-fade-in relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-violet-500/5 animate-pulse" />
+                <div className="relative prose prose-invert max-w-none">
                   <ReactMarkdown
                     components={{
                       p: ({node, ...props}) => (
@@ -265,7 +362,7 @@ const askGroq = async (inputText: string) => {
                         <li className="text-violet-300 pl-2" {...props} />
                       ),
                       a: ({node, ...props}) => (
-                        <a className="text-blue-400 hover:text-blue-300 underline" {...props} />
+                        <a className="text-blue-400 hover:text-blue-300 underline transition-colors" {...props} />
                       ),
                       h1: ({node, ...props}) => (
                         <h1 className="text-2xl font-bold text-blue-300 mb-4" {...props} />
@@ -289,8 +386,17 @@ const askGroq = async (inputText: string) => {
           </form>
         </div>
       </div>
+
+      <style jsx global>{`
+        @keyframes fade-in {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-in {
+          animation: fade-in 0.3s ease-out forwards;
+        }
+      `}</style>
     </section>
   );
-};
-
-export default Chatbot;
+}

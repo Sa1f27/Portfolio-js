@@ -1,5 +1,58 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import { Github } from 'lucide-react';
+
+const ParticleEffect = () => {
+  const [particles, setParticles] = useState([]);
+  
+  useEffect(() => {
+    const createParticle = () => ({
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight,
+      size: Math.random() * 3 + 1,
+      speedX: (Math.random() - 0.5) * 2,
+      speedY: (Math.random() - 0.5) * 2,
+      opacity: Math.random() * 0.5 + 0.3,
+    });
+
+    const particleCount = 30;
+    const initialParticles = Array.from({ length: particleCount }, createParticle);
+    setParticles(initialParticles);
+
+    const animateParticles = () => {
+      setParticles(prevParticles =>
+        prevParticles.map(particle => ({
+          ...particle,
+          x: (particle.x + particle.speedX + window.innerWidth) % window.innerWidth,
+          y: (particle.y + particle.speedY + window.innerHeight) % window.innerHeight,
+        }))
+      );
+    };
+
+    const interval = setInterval(animateParticles, 50);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="absolute inset-0 pointer-events-none">
+      {particles.map((particle, index) => (
+        <div
+          key={index}
+          className="absolute rounded-full bg-blue-400"
+          style={{
+            left: `${particle.x}px`,
+            top: `${particle.y}px`,
+            width: `${particle.size}px`,
+            height: `${particle.size}px`,
+            opacity: particle.opacity,
+            transform: 'translate(-50%, -50%)',
+          }}
+        />
+      ))}
+    </div>
+  );
+};
 
 const projects = [
   {
@@ -33,60 +86,159 @@ const projects = [
 ];
 
 export default function Projects() {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [hoveredProject, setHoveredProject] = useState(null);
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const projectVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
-    <section id="projects" className="py-20 relative">
+    <section id="projects" className="min-h-screen py-20 relative overflow-hidden">
+      {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-black to-violet-950/30" />
+      
+      {/* Animated Particles */}
+      <ParticleEffect />
+
+      {/* Cyberpunk Grid with Mouse Parallax */}
+      <div 
+        className="absolute inset-0 opacity-10"
+        style={{
+          backgroundImage: 'radial-gradient(circle at center, rgba(66, 153, 225, 0.2) 1px, transparent 1px)',
+          backgroundSize: '30px 30px',
+          transform: `translate(${(mousePosition.x - window.innerWidth / 2) * 0.02}px, ${(mousePosition.y - window.innerHeight / 2) * 0.02}px)`,
+        }}
+      />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-violet-400 mb-12 text-center">
-          Projects
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.h2
+          initial={{ opacity: 0, y: -20 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
+          transition={{ duration: 0.8 }}
+          className="text-5xl font-bold mb-16 text-center"
+        >
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-violet-400">
+            Featured Projects
+          </span>
+        </motion.h2>
+
+        <motion.div
+          ref={ref}
+          variants={containerVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8"
+        >
           {projects.map((project, index) => (
-            <div
+            <motion.div
               key={index}
-              className="backdrop-blur-sm rounded-xl p-6 bg-blue-950/20 border border-blue-500/20
-                         hover:bg-blue-900/30 hover:border-blue-400/30 transition-all duration-300
-                         group relative overflow-hidden"
+              variants={projectVariants}
+              className="group relative"
+              onMouseEnter={() => setHoveredProject(index)}
+              onMouseLeave={() => setHoveredProject(null)}
             >
-              {/* Cyberpunk accent */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-violet-500 to-blue-500 opacity-0 
-                            group-hover:opacity-20 transition-opacity duration-300" />
-              <iframe
-                src={project.image}
-                className="w-full h-48 rounded-lg mb-6"
-                allow="autoplay"
-                frameBorder="0"
-              ></iframe>
-              <h3 className="text-xl font-semibold text-blue-300 mb-2 relative">
-                {project.title}
-              </h3>
-              <p className="text-violet-300 mb-4 relative">
-                {project.description}
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4 relative">
-                {project.technologies.map((tech, techIndex) => (
-                  <span
-                    key={techIndex}
-                    className="px-3 py-1 bg-violet-500 text-blue-200 rounded-full text-sm"
+              <div className={`
+                backdrop-blur-sm rounded-xl overflow-hidden
+                border border-blue-500/20 bg-blue-950/20
+                transition-all duration-500
+                ${hoveredProject === index ? 'bg-blue-900/30 border-blue-400/30 scale-[1.02]' : ''}
+                relative
+              `}>
+                {/* Animated gradient border */}
+                <div className="absolute -inset-[0.5px] bg-gradient-to-r from-blue-500 via-violet-500 to-blue-500 opacity-0 
+                              group-hover:opacity-30 transition-opacity duration-500" />
+                
+                {/* Project content */}
+                <div className="relative p-6">
+                  <div className="relative">
+                    <iframe
+                      src={project.image}
+                      className="w-full h-48 rounded-lg mb-6 transform group-hover:scale-[1.02] transition-transform duration-500"
+                      allow="autoplay"
+                      frameBorder="0"
+                    ></iframe>
+                    
+                    {/* Hover overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent opacity-0 
+                                group-hover:opacity-100 transition-opacity duration-500" />
+                  </div>
+
+                  <h3 className="text-2xl font-semibold text-blue-300 mb-3 relative group-hover:text-blue-200 
+                              transition-colors duration-300">
+                    {project.title}
+                  </h3>
+
+                  <p className="text-violet-300 mb-4 relative line-clamp-3 group-hover:text-violet-200 
+                              transition-colors duration-300">
+                    {project.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2 mb-4 relative">
+                    {project.technologies.map((tech, techIndex) => (
+                      <span
+                        key={techIndex}
+                        className="px-3 py-1 bg-violet-500/20 border border-violet-500/30 text-blue-200 
+                                rounded-full text-sm transform hover:scale-105 transition-transform duration-300"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  <motion.div 
+                    className="flex space-x-4 relative"
+                    initial={{ opacity: 0.8 }}
+                    whileHover={{ opacity: 1 }}
                   >
-                    {tech}
-                  </span>
-                ))}
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 
+                              text-blue-300 hover:text-blue-200 hover:bg-blue-500/30 hover:border-blue-400/50 
+                              transition-all duration-300"
+                    >
+                      <Github size={20} />
+                      View Code
+                    </a>
+                  </motion.div>
+                </div>
               </div>
-              <div className="flex space-x-4 relative">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center text-blue-300 hover:text-violet-400"
-                >
-                  <Github size={20} className="mr-1" />
-                  Code
-                </a>
-              </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
