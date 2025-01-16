@@ -303,13 +303,14 @@ export default function Hero() {
             <div className="absolute right-2 top-2 flex gap-2 z-10">
               <button
                 onClick={handleDownloadResume}
-                className="text-blue-400 hover:text-blue-300 p-1 rounded-lg
-                         backdrop-blur-sm bg-blue-950/20 border border-blue-500/20
-                         hover:bg-blue-900/30 hover:border-blue-400/30 flex items-center gap-1"
+                className="text-white hover:text-gray-300 p-1 rounded-lg
+                          backdrop-blur-sm bg-gray-800 border border-gray-700
+                          hover:bg-gray-700 hover:border-gray-600 flex items-center gap-1"
               >
                 <Download size={20} />
                 <span className="text-xs">Download</span>
               </button>
+
               <button
                 onClick={() => setIsResumeOpen(false)}
                 className="text-blue-400 hover:text-blue-300 p-1 rounded-lg
