@@ -8,13 +8,10 @@ const Chatbot = () => {
   const [error, setError] = useState('');
 
 // Your bio information
-const bioInfo = `Here is your bio information in plain text format with corrections and updates to the tech stack where necessary:
-
----
-
+const bioInfo = `
 Mohammed Huzaifah
 
-Senior AI/ML Engineer & Computer Science Researcher
+AI/ML Engineer & Computer Science Researcher
 
 Personal Information
 
@@ -35,80 +32,47 @@ Core Technical Competencies
 
 Advanced AI Systems
 
-- Foundation Models & LLMs:
-  - Modern LLMs: GPT-4, Claude 3, Gemini Pro, PaLM 2
-  - Open Source Models: Llama 2, Mistral 7B, Mixtral 8x7B
-  - Domain-Specific Models: CodeLlama, Med-PaLM, Stable Code
-  - Fine-tuning: LoRA, QLoRA, PEFT, Direct Preference Optimization
+Core Competencies
 
-- Multimodal AI:
-  - Vision-Language Models: GPT-4V, Claude 3, Gemini Pro Vision
-  - Image Generation: Stable Diffusion XL, DALL-E 3, Midjourney
-  - Audio AI: Whisper, Bark, MusicGen
-  - Video AI: ModelScope, Text-to-Video-Zero
+AI & Machine Learning
 
-Modern AI Development Stack
+Large Language Models: Fine-tuning, RAG systems, prompt engineering
+Neural Networks: CNNs, RNNs, GANs, Transformers
+Computer Vision: Object detection, segmentation, OpenCV
+NLP: Text classification, sentiment analysis, text generation
 
-- Core AI Tools:
-  - LLMs:
-    - Production: DeepSeek V3, Claude 3, GPT-4
-    - Open Source: Llama 2, Mixtral, Qwen
-    - Specialized: CodeLlama, StarCoder2
-  
-  - Vector Databases:
-    - Primary: Chroma, Weaviate, Qdrant
-    - Specialized: Pinecone, Milvus
-    - Embedding Models: OpenAI Ada 2, BGE, E5
 
-- MLOps & Infrastructure:
-  - Orchestration:
-    - Kubeflow
-    - Airflow
-    - Argo Workflows
-  - Model Serving:
-    - BentoML
-    - Ray Serve
-    - Triton Inference Server (updated name)
-  - Monitoring:
-    - Weights & Biases
-    - MLflow
-    - Prometheus
+Generative AI & Emerging Technologies
 
-- Development Tools:
-  - IDEs & Extensions:
-    - VSCode with GitHub Copilot
-    - JetBrains AI Assistant
-    - Cursor
-  - AI Frameworks:
-    - LangChain
-    - LlamaIndex
-    - Semantic Kernel
-  - Testing:
-    - Pytest
-    - Playwright
-    - Locust
+LLM Integration: DeepSeek V3, Qwen, Llama, Gemini 2.0 Flash, Claude Haiku
+Multi-modal Models: Text-to-image synthesis, voice processing
+AI Agents: Tool-using AI, autonomous systems, LangGraph
+Vector Databases: Semantic search, embeddings
 
-- Cloud & Deployment:
-  - Primary:
-    - AWS SageMaker
-    - Azure ML
-    - Google Vertex AI
-  - Specialized:
-    - RunPod
-    - Lambda Labs
-    - Vast.ai
 
-- Version Control & CI/CD:
-  - GitHub with Actions
-  - GitLab CI/CD
-  - DVC for ML artifacts
 
-- AI Agent Frameworks:
-  - AutoGPT
-  - LangGraph
-  - CrewAI
+Technical Stack:
+  Primary: Python
+  Secondary: JavaScript, C++, Java
+  Web: HTML, CSS
 
-Signature Projects
+Frameworks & Libraries:
+  ML/DL: TensorFlow, PyTorch, Scikit-learn, Keras, XGBoost, LGBoost
+  Data: Pandas, NumPy, Apache Spark
+  Visualization: Matplotlib, Seaborn, Plotly
+
+AI Tools:
+  Development: Bolt.new, Windsurf/Cursor
+  Frameworks: Pydantic AI, LangGraph (Fiowise prototype)
+  Search: Rrave, Firecrawi, Perplexity, SearchiAP
+
+Infrastructure:
+  Cloud: DigitalOcean, RunPod, AWS, Azure
+  Containerization: Docker
+  CI/CD: GitHub Actions
+  MLOps: MLflow, DVC, Jenkins
+
+Signature Projects:
 
 KidsCare-Pro (Pediatric Healthcare AI) 
 Developed end-to-end pediatric health monitoring system  
@@ -118,7 +82,7 @@ Impact: Serving over 1000 patients with a prediction accuracy of 95%.
 
 SoulScan (Disease Prediction) 
 Built advanced disease prediction platform  
-Stack: Mixtral 8x7B, BioGPT, Chroma DB  
+Stack: Mixtral 8x7B, "Python", "TensorFlow", "Flask", "MongoDB" 
 Features: Multi-modal disease detection and personalized health insights  
 Impact: Achieved a detection accuracy of 98%, deployed in three hospitals.  
 
