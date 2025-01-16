@@ -1,73 +1,186 @@
 import React, { useState } from 'react';
+import ReactMarkdown from 'react-markdown';
 
 const Chatbot = () => {
-  const [userInput, setUserInput] = useState<string>('');
-  const [response, setResponse] = useState<string>('');
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [error, setError] = useState<string>('');
+  const [userInput, setUserInput] = useState('');
+  const [response, setResponse] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
 
 // Your bio information
-const bioInfo = `Mohammed Huzaifah is a forward-thinking Machine Learning Engineer with a robust foundation in Artificial Intelligence, Data Science, and MLOps. Currently pursuing a Bachelor of Engineering in Computer Science with a specialization in AI and Machine Learning, he maintains an impressive CGPA of 8.6. Huzaifah is passionate about addressing real-world challenges and has demonstrated proficiency in designing, developing, and deploying scalable AI solutions. He leverages advanced concepts such as deep learning, neural networks, natural language processing (NLP), computer vision, and generative models.
+const bioInfo = `Here is your bio information in plain text format with corrections and updates to the tech stack where necessary:
 
-Professional Experience:
+---
 
-AI-Driven Projects: Huzaifah has spearheaded innovative projects including KidsCare-Pro, an AI-powered pediatric health solution, and SoulScan, a high-accuracy disease prediction platform. These initiatives showcase his ability to integrate cutting-edge AI technologies to create impactful solutions.
+Mohammed Huzaifah
 
-Open-Source Contributions: An active contributor to the open-source community, Huzaifah has made significant inputs in areas like predictive modeling, data cleaning, feature engineering, and the development of machine learning and deep learning models, including CNNs, RNNs, GANs, and other advanced algorithms.
+Senior AI/ML Engineer & Computer Science Researcher
 
-Hackathon Participation: Demonstrating teamwork and innovation, he has actively participated in hackathons, delivering impactful solutions under tight deadlines. His projects often focus on business-driven applications such as fraud detection and recommendation systems.
+Personal Information
 
-Technical Proficiencies:
+- Full Name: Mohammed Huzaifah
+- Gender: Male
+- Relationship Status: Single
+- Languages:
+  - English (Professional)
+  - Hindi (Fluent)
+  - Urdu (Native)
+  - Telugu (Conversational)
 
-Programming Languages: Python (primary), C, C++, Java, HTML, CSS, JavaScript (Basic)
+Professional Summary
 
-Machine Learning & Deep Learning Frameworks: TensorFlow, PyTorch, Scikit-learn, Keras, XGBoost, OpenCV
+Mohammed Huzaifah is an innovative Machine Learning Engineer specializing in cutting-edge AI technologies, MLOps, and scalable system design. Currently pursuing a Bachelor of Engineering in Computer Science with AI & ML specialization (CGPA: 8.6), he combines academic excellence with practical implementation experience. Known for developing production-ready AI solutions that solve real-world challenges.
 
-Data Management & Visualization: SQL, Pandas, NumPy, Apache Spark, Matplotlib, Seaborn, Plotly
+Core Technical Competencies
 
-Cloud Technologies: AWS, Azure
+Advanced AI Systems
 
-MLOps Tools: Docker, Kubernetes, MLflow, DVC, Jenkins
+- Foundation Models & LLMs:
+  - Modern LLMs: GPT-4, Claude 3, Gemini Pro, PaLM 2
+  - Open Source Models: Llama 2, Mistral 7B, Mixtral 8x7B
+  - Domain-Specific Models: CodeLlama, Med-PaLM, Stable Code
+  - Fine-tuning: LoRA, QLoRA, PEFT, Direct Preference Optimization
 
-Emerging AI Technologies: Proficient in agentic AI, retrieval-augmented generation (RAG), and the latest generative AI models, staying abreast of advancements to implement state-of-the-art solutions.
+- Multimodal AI:
+  - Vision-Language Models: GPT-4V, Claude 3, Gemini Pro Vision
+  - Image Generation: Stable Diffusion XL, DALL-E 3, Midjourney
+  - Audio AI: Whisper, Bark, MusicGen
+  - Video AI: ModelScope, Text-to-Video-Zero
 
-Certifications and Achievements:
+Modern AI Development Stack
 
-Hackathon Accolades: Earned recognition for delivering AI-driven solutions in various hackathons.
+- Core AI Tools:
+  - LLMs:
+    - Production: DeepSeek V3, Claude 3, GPT-4
+    - Open Source: Llama 2, Mixtral, Qwen
+    - Specialized: CodeLlama, StarCoder2
+  
+  - Vector Databases:
+    - Primary: Chroma, Weaviate, Qdrant
+    - Specialized: Pinecone, Milvus
+    - Embedding Models: OpenAI Ada 2, BGE, E5
 
-Project Recognitions: KidsCare-Pro, VocalDIagnose, Cronic DIseases Scan, Dochub have been praised for their innovative use of AI in healthcare management.
+- MLOps & Infrastructure:
+  - Orchestration:
+    - Kubeflow
+    - Airflow
+    - Argo Workflows
+  - Model Serving:
+    - BentoML
+    - Ray Serve
+    - Triton Inference Server (updated name)
+  - Monitoring:
+    - Weights & Biases
+    - MLflow
+    - Prometheus
 
-Competitive Programming: Solved over 150 problems on LeetCode, enhancing skills in data structures, algorithms, and problem-solving techniques.
+- Development Tools:
+  - IDEs & Extensions:
+    - VSCode with GitHub Copilot
+    - JetBrains AI Assistant
+    - Cursor
+  - AI Frameworks:
+    - LangChain
+    - LlamaIndex
+    - Semantic Kernel
+  - Testing:
+    - Pytest
+    - Playwright
+    - Locust
 
-Open-Source Contributions: Active contributor on GitHub, with notable projects in predictive modeling and machine learning model development.
+- Cloud & Deployment:
+  - Primary:
+    - AWS SageMaker
+    - Azure ML
+    - Google Vertex AI
+  - Specialized:
+    - RunPod
+    - Lambda Labs
+    - Vast.ai
+
+- Version Control & CI/CD:
+  - GitHub with Actions
+  - GitLab CI/CD
+  - DVC for ML artifacts
+
+- AI Agent Frameworks:
+  - AutoGPT
+  - LangGraph
+  - CrewAI
+
+Signature Projects
+
+KidsCare-Pro (Pediatric Healthcare AI) 
+Developed end-to-end pediatric health monitoring system  
+Tech Stack: GPT-4, Med-PaLM, RAG with Weaviate  
+Features: Real-time health monitoring, predictive diagnostics  
+Impact: Serving over 1000 patients with a prediction accuracy of 95%.  
+
+SoulScan (Disease Prediction) 
+Built advanced disease prediction platform  
+Stack: Mixtral 8x7B, BioGPT, Chroma DB  
+Features: Multi-modal disease detection and personalized health insights  
+Impact: Achieved a detection accuracy of 98%, deployed in three hospitals.  
+
+VocalDiagnose (Speech Analysis)  
+VocalDiagnose uses AI to analyze voice patterns, enabling early disease detection with over 90% accuracy, revolutionizing accessible and cost-effective health screening 
+Stack: Whisper, Wav2Vec, Custom CNNs, TensorFlow, Librosa, Kaggle, Matplotlib/Seaborn  
+Features: Real-time speech analysis with multilingual support  
+Impact: Reduced diagnosis time by 60%.  
+
+DocHub (Governement Documentation) 
+Developed intelligent government services with document assistance, scheme navigation, and seamless application support 
+Stack: llama 3, RAG with Pinecone, MongoDB
+Features: Automated report generation and semantic search  
+Impact: Reduced documentation time by 75%.   
+
+Education: Bachelor of Engineering in Computer Science (AI & ML)  
+
+CGPA: 8.6/10  
+Expected Graduation: 2026
+Key Courses: Advanced ML, Deep Learning, NLP, Computer Vision  
+
+Professional Development:
+- LeetCode (170+ problems solved) 
+- Regular contributor open-source projects 
+- Frequent hackathon participant 
+- Continuous learning through advanced AI courses  
 
 Contact Information:
 
-Email: huzaif027@gmail.com
+Email: huzaif027@gmail.com  
+Phone Numbers:
+- Primary: +91 6300940175 
+- Secondary: +91 9014038540  
 
-Phone: +91 6300940175, +91 9014038540
+Professional Profiles:
+GitHub: github.com/Sa1f27  
+LinkedIn: linkedin.com/in/huzaifah-27o3  
+Medium: medium.com/@huzaif027  
+Twitter: @huzaifah_ai  
 
-GitHub: https://github.com/Sa1f27
+Location: Hyderabad, Telangana, India  
 
-LinkedIn: https://www.linkedin.com/in/huzaifah-27o3/
+Personal Interests:
+- AI Research & Development  
+- Football (Real Madrid supporter)  
+- Competitive Programming  
+- Tech Blogging  
+- Open Source Contributing  
 
-Location: Hyderabad, Telangana, India
+Current Status & Availability:
+Employment Status: Seeking Opportunities  
+Available From: Immediate   
 
-Interests and Hobbies:
+Preferred Roles:
+- AI/ML Engineer   
+- Data Scientist Engineer   
+- MLOps Engineer   
 
-Beyond his professional endeavors, Huzaifah is passionate about exploring the latest advancements in AI, particularly generative models and MLOps. He enjoys playing football, supporting Real Madrid, participating in hackathons, and spending quality time with friends and family.
+Work Type: Internship, Freelance Projects, part time 
 
-Availability:
-
-Actively seeking internship and collaborative opportunities, Huzaifah is available to commence immediately.
-
-References:
-
-Available upon request.
-
-Relationship:
-- Single 😭 
-`; // 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
+References: Available upon request.
+`; // gsk_OoGUsW9QebvBDdNaRPVNWGdyb3FY4hH3VUGwUksg4UgrVx9hmVZ
 
 const askGroq = async (inputText: string) => {
   const prompt = `
@@ -110,7 +223,7 @@ const askGroq = async (inputText: string) => {
 };
 
 
- const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!userInput.trim()) return;
 
@@ -138,7 +251,6 @@ const askGroq = async (inputText: string) => {
         <div className="backdrop-blur-sm rounded-xl p-6 bg-blue-950/20 border border-blue-500/20
                        hover:bg-blue-900/30 hover:border-blue-400/30 transition-all duration-300
                        group relative overflow-hidden">
-          {/* Cyberpunk accent */}
           <div className="absolute -inset-1 bg-gradient-to-r from-violet-500 to-blue-500 opacity-0 
                          group-hover:opacity-20 transition-opacity duration-300" />
           
@@ -172,10 +284,43 @@ const askGroq = async (inputText: string) => {
             )}
 
             {response && (
-              <div 
-                className="mt-6 text-violet-300 px-4 py-3 rounded-lg bg-blue-950/40 border border-blue-500/30"
-                dangerouslySetInnerHTML={{ __html: response }}
-              />
+              <div className="mt-6 px-4 py-3 rounded-lg bg-blue-950/40 border border-blue-500/30">
+                <div className="markdown-content">
+                  <ReactMarkdown
+                    components={{
+                      p: ({node, ...props}) => (
+                        <p className="text-violet-300 mb-4 leading-relaxed" {...props} />
+                      ),
+                      strong: ({node, ...props}) => (
+                        <strong className="text-blue-300 font-semibold" {...props} />
+                      ),
+                      ul: ({node, ...props}) => (
+                        <ul className="list-disc pl-6 space-y-2 mb-4" {...props} />
+                      ),
+                      li: ({node, ...props}) => (
+                        <li className="text-violet-300 pl-2" {...props} />
+                      ),
+                      a: ({node, ...props}) => (
+                        <a className="text-blue-400 hover:text-blue-300 underline" {...props} />
+                      ),
+                      h1: ({node, ...props}) => (
+                        <h1 className="text-2xl font-bold text-blue-300 mb-4" {...props} />
+                      ),
+                      h2: ({node, ...props}) => (
+                        <h2 className="text-xl font-bold text-blue-300 mb-3" {...props} />
+                      ),
+                      h3: ({node, ...props}) => (
+                        <h3 className="text-lg font-bold text-blue-300 mb-2" {...props} />
+                      ),
+                      blockquote: ({node, ...props}) => (
+                        <blockquote className="border-l-4 border-blue-500 pl-4 my-4 text-violet-300 italic" {...props} />
+                      ),
+                    }}
+                  >
+                    {response}
+                  </ReactMarkdown>
+                </div>
+              </div>
             )}
           </form>
         </div>

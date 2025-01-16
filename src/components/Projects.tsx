@@ -20,7 +20,7 @@ const projects = [
     title: "Disease Diagnosis",
     description: "High-accuracy disease prediction platform utilizing deep learning and computer vision for early detection and diagnosis.",
     image: "https://drive.google.com/file/d/1EgNXnHxXwoG8-2zyOTeAU7EP8umrixId/preview",
-    technologies: ["PyTorch", "OpenCV", "TensorFlow", "Librosa", "Matplotlib/Seaborn"],
+    technologies: ["PyTorch", "OpenCV", "TensorFlow", "Matplotlib/Seaborn"],
     github: "https://github.com/Sa1f27/Disease-Prediction"
   },
   {
