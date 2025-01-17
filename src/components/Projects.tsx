@@ -125,7 +125,7 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="min-h-screen py-20 relative overflow-hidden">
+    <section id="projects" className="relative min-h-screen py-24 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-black to-violet-950/30" />
       
@@ -142,16 +142,14 @@ export default function Projects() {
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="relative z-10 container mx-auto px-6 lg:px-8">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
           transition={{ duration: 0.8 }}
-          className="text-5xl font-bold mb-16 text-center"
+          className="text-5xl font-bold mb-20 text-center bg-gradient-to-r from-blue-400 to-violet-400 text-transparent bg-clip-text"
         >
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-violet-400">
-            Featured Projects
-          </span>
+          Featured Projects
         </motion.h2>
 
         <motion.div
@@ -159,7 +157,7 @@ export default function Projects() {
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12 max-w-[1400px] mx-auto"
         >
           {projects.map((project, index) => (
             <motion.div
@@ -170,70 +168,73 @@ export default function Projects() {
               onMouseLeave={() => setHoveredProject(null)}
             >
               <div className={`
-                backdrop-blur-sm rounded-xl overflow-hidden
-                border border-blue-500/20 bg-blue-950/20
-                transition-all duration-500
+                rounded-xl overflow-hidden
+                backdrop-blur-sm border border-blue-500/20 
+                bg-blue-950/20 h-full
+                transition-all duration-500 ease-out
                 ${hoveredProject === index ? 'bg-blue-900/30 border-blue-400/30 scale-[1.02]' : ''}
-                relative
               `}>
                 {/* Animated gradient border */}
-                <div className="absolute -inset-[0.5px] bg-gradient-to-r from-blue-500 via-violet-500 to-blue-500 opacity-0 
-                              group-hover:opacity-30 transition-opacity duration-500" />
+                <div className="absolute -inset-[0.5px] bg-gradient-to-r from-blue-500 via-violet-500 to-blue-500 
+                              opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
                 
                 {/* Project content */}
-                <div className="relative p-6">
-                  <div className="relative">
+                <div className="p-6 lg:p-8 h-full flex flex-col">
+                  <div className="relative mb-6">
                     <iframe
                       src={project.image}
-                      className="w-full h-48 rounded-lg mb-6 transform group-hover:scale-[1.02] transition-transform duration-500"
+                      className="w-full aspect-video rounded-lg transform group-hover:scale-[1.02] transition-transform duration-500"
                       allow="autoplay"
                       frameBorder="0"
                     ></iframe>
                     
                     {/* Hover overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent opacity-0 
-                                group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent 
+                                opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
 
-                  <h3 className="text-2xl font-semibold text-blue-300 mb-3 relative group-hover:text-blue-200 
+                  <h3 className="text-2xl font-semibold text-blue-300 mb-4 group-hover:text-blue-200 
                               transition-colors duration-300">
                     {project.title}
                   </h3>
 
-                  <p className="text-violet-300 mb-4 relative line-clamp-3 group-hover:text-violet-200 
-                              transition-colors duration-300">
+                  <p className="text-violet-300 mb-6 line-clamp-3 group-hover:text-violet-200 
+                              transition-colors duration-300 flex-grow">
                     {project.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-2 mb-4 relative">
-                    {project.technologies.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="px-3 py-1 bg-violet-500/20 border border-violet-500/30 text-blue-200 
-                                rounded-full text-sm transform hover:scale-105 transition-transform duration-300"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                  <div className="space-y-6">
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech, techIndex) => (
+                        <span
+                          key={techIndex}
+                          className="px-3 py-1 bg-violet-500/20 border border-violet-500/30 
+                                  text-blue-200 rounded-full text-sm transform hover:scale-105 
+                                  transition-all duration-300"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
 
-                  <motion.div 
-                    className="flex space-x-4 relative"
-                    initial={{ opacity: 0.8 }}
-                    whileHover={{ opacity: 1 }}
-                  >
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 
-                              text-blue-300 hover:text-blue-200 hover:bg-blue-500/30 hover:border-blue-400/50 
-                              transition-all duration-300"
+                    <motion.div 
+                      initial={{ opacity: 0.8 }}
+                      whileHover={{ opacity: 1 }}
                     >
-                      <Github size={20} />
-                      View Code
-                    </a>
-                  </motion.div>
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg 
+                                bg-blue-500/20 border border-blue-500/30 text-blue-300 
+                                hover:text-blue-200 hover:bg-blue-500/30 hover:border-blue-400/50 
+                                transition-all duration-300"
+                      >
+                        <Github size={20} />
+                        View Code
+                      </a>
+                    </motion.div>
+                  </div>
                 </div>
               </div>
             </motion.div>

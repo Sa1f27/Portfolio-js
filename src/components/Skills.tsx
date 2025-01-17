@@ -130,7 +130,7 @@ export default function Skills() {
   };
 
   return (
-    <section className="min-h-screen py-20 relative overflow-hidden">
+    <section id="skills" className="min-h-screen py-20 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-black to-violet-950/30" />
       
