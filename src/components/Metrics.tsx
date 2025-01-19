@@ -179,6 +179,13 @@ const certifications = [
     icon: "Brain" // Represents innovation and problem-solving
   },
   {
+    title: "RAM Infotech Internship",
+    issuedBy: "RAM Innovative Infotech",
+    date: "2024",
+    link: "https://github.com/Sa1f27/Certs/blob/65741ed34d0cad506b0b8c878faf12859fb8b950/Certificates/Ram%20Infotech-Internship.jpg",
+    icon: "Briefcase" // Represents internship or professional development
+  },
+  {
     title: "CodSoft Internship",
     issuedBy: "CodSoft",
     date: "2024",
