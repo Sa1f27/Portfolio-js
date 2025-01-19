@@ -178,6 +178,13 @@ const certifications = [
     link: "https://github.com/Sa1f27/Certs/blob/25349ede0b3932d2dd77715f5bc324ef5c1173d2/Certificates/HackRev-Certificate.jpg",
     icon: "Brain" // Represents innovation and problem-solving
   },
+    {
+    title: "DataNyx Datathon",
+    issuedBy: "MJCET",
+    date: "2024",
+    link: "https://github.com/Sa1f27/Certs/blob/25349ede0b3932d2dd77715f5bc324ef5c1173d2/Certificates/DataNyx-Certificate.jpg",
+    icon: "Database" // Represents data-related events
+  },
   {
     title: "RAM Infotech Internship",
     issuedBy: "RAM Innovative Infotech",
@@ -200,13 +207,6 @@ const certifications = [
     icon: "Code" // Represents coding and programming
   },
   {
-    title: "DataNyx Hackathon",
-    issuedBy: "MJCET",
-    date: "2024",
-    link: "https://github.com/Sa1f27/Certs/blob/25349ede0b3932d2dd77715f5bc324ef5c1173d2/Certificates/DataNyx-Certificate.jpg",
-    icon: "Database" // Represents data-related events
-  },
-  {
     title: "Hackprix Hackathon",
     issuedBy: "LIET",
     date: "2024",
@@ -220,13 +220,13 @@ const certifications = [
     link: "https://github.com/Sa1f27/Certs/blob/25349ede0b3932d2dd77715f5bc324ef5c1173d2/Certificates/Imagine-Certificate.jpg",
     icon: "Lightbulb" // Represents creativity and innovation
   },
-    {
-    title: "CloudX-25",
-    issuedBy: "MJCET",
-    date: "2025",
-    link: "https://github.com/Sa1f27/Certs/blob/a8a03c11992606b45f5b94032431d4cd760646f7/Certificates/CloudX-25.jpg",
-    icon: "Brain" // Represents creativity and innovation
-  }
+//     {
+//     title: "CloudX-25",
+//     issuedBy: "MJCET",
+//     date: "2025",
+//     link: "https://github.com/Sa1f27/Certs/blob/a8a03c11992606b45f5b94032431d4cd760646f7/Certificates/CloudX-25.jpg",
+//     icon: "Brain" // Represents creativity and innovation
+//   }
 ];
 
   
