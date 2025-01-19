@@ -6,6 +6,7 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Chatbot from './components/Chatbot';
+import MetricsSection from './components/Metrics';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <About />
       <Skills />
       <Projects />
+      <MetricsSection />
       <Contact />
     </div>
   );

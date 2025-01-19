@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { GraduationCap, Heart, Sparkles, Code } from 'lucide-react';
 
+
 const ParticleEffect = () => {
   const [particles, setParticles] = useState([]);
   

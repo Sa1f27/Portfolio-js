@@ -33,8 +33,8 @@ const ParticleEffect = () => {
     return () => clearInterval(interval);
   }, []);
  
-    return (
-    <div className="absolute inset-0 pointer-events-none">
+  return (
+    <div className="absolute inset-0 pointer-events-none overflow-hidden">
       {particles.map((particle, index) => (
         <div
           key={index}
@@ -208,7 +208,7 @@ Preferred Roles:
 Work Type: Internship, Freelance Projects, part time 
 
 References: Available upon request.
-`; // gsk_OoGUsW9QebvBDdNaRPVNWGdyb3FY4hH3VUGwUksg4UgrVx9hmVZ
+`;
 
 const askGroq = async (inputText: string) => {
   const prompt = `
@@ -235,7 +235,7 @@ const askGroq = async (inputText: string) => {
       },
       body: JSON.stringify({
         messages: [{ role: 'user', content: prompt }],
-        model: 'llama-3.1-8b-instant',
+        model: 'llama3-8b-8192',
       }),
     });
 
@@ -269,7 +269,7 @@ const askGroq = async (inputText: string) => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden py-20">
+    <section className="h-50 flex items-center justify-center relative overflow-hidden py-20">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-black to-violet-950/30" />
       
@@ -287,7 +287,6 @@ const askGroq = async (inputText: string) => {
       />
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        {/* Title with Enhanced Glitch Effect */}
         <h2 className="text-4xl font-bold mb-12 text-center relative">
           <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-violet-400">
             Ask anything about me!
