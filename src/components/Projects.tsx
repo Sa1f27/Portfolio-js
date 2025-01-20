@@ -240,7 +240,7 @@ export default function Projects() {
             </motion.div>
           ))}
         </motion.div>
-      </div>
+      </div><ParticleEffect />
     </section>
   );
 }

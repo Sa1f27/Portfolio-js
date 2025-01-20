@@ -1,6 +1,56 @@
 import React, { useState, useEffect } from 'react';
-import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
-import { Trophy, Award, Code, GitBranch, Box, Star, Rocket, Cloud, Brain } from 'lucide-react';
+import { Trophy, Award, Code, GitBranch, Box, Star, Rocket, Brain, Shield, Cpu, Cloud } from 'lucide-react';
+
+const ParticleEffect = () => {
+  const [particles, setParticles] = useState([]);
+  
+  useEffect(() => {
+    const createParticle = () => ({
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight,
+      size: Math.random() * 3 + 1,
+      speedX: (Math.random() - 0.5) * 2,
+      speedY: (Math.random() - 0.5) * 2,
+      opacity: Math.random() * 0.5 + 0.3,
+    });
+
+    const particleCount = 30;
+    const initialParticles = Array.from({ length: particleCount }, createParticle);
+    setParticles(initialParticles);
+
+    const animateParticles = () => {
+      setParticles(prevParticles =>
+        prevParticles.map(particle => ({
+          ...particle,
+          x: (particle.x + particle.speedX + window.innerWidth) % window.innerWidth,
+          y: (particle.y + particle.speedY + window.innerHeight) % window.innerHeight,
+        }))
+      );
+    };
+
+    const interval = setInterval(animateParticles, 50);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="absolute inset-0 pointer-events-none">
+      {particles.map((particle, index) => (
+        <div
+          key={index}
+          className="absolute rounded-full bg-blue-400"
+          style={{
+            left: `${particle.x}px`,
+            top: `${particle.y}px`,
+            width: `${particle.size}px`,
+            height: `${particle.size}px`,
+            opacity: particle.opacity,
+            transform: 'translate(-50%, -50%)',
+          }}
+        />
+      ))}
+    </div>
+  );
+};
 
 // Custom Card Components
 const Card = ({ children, className = "" }) => (
@@ -176,14 +226,14 @@ const certifications = [
     issuedBy: "MJCET",
     date: "2025",
     link: "https://github.com/Sa1f27/Certs/blob/25349ede0b3932d2dd77715f5bc324ef5c1173d2/Certificates/HackRev-Certificate.jpg",
-    icon: "Brain" // Represents innovation and problem-solving
+    icon: "Database" // Represents innovation and problem-solving
   },
     {
     title: "DataNyx Datathon",
     issuedBy: "MJCET",
     date: "2024",
     link: "https://github.com/Sa1f27/Certs/blob/25349ede0b3932d2dd77715f5bc324ef5c1173d2/Certificates/DataNyx-Certificate.jpg",
-    icon: "Database" // Represents data-related events
+    icon: "Brain" // Represents data-related events
   },
   {
     title: "RAM Infotech Internship",
@@ -233,7 +283,8 @@ const certifications = [
   return (
     <section id="metrics" className="min-h-screen py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-violet-950/50" />
-      
+            {/* Animated Particles */}
+      <ParticleEffect />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-violet-400">
@@ -305,7 +356,7 @@ const certifications = [
             <div className="text-center p-4 bg-blue-900/20 rounded-lg">
                 <p className="text-3xl font-bold text-blue-400">{metrics.hackathons.attended}</p>
                 <p className="text-blue-400/60 text-sm mt-2">Attended</p>
-            </div>
+            </div><ParticleEffect />
             <div className="text-center p-4 bg-blue-900/20 rounded-lg">
                 <p className="text-3xl font-bold text-blue-400">{metrics.hackathons.won}</p>
                 <p className="text-blue-400/60 text-sm mt-2">Won</p>
@@ -316,7 +367,6 @@ const certifications = [
             </div>
             </div>
         </Card>
-
         {/* Project Stats */}
         <Card className="bg-blue-950/20 border border-blue-500/20 backdrop-blur-sm p-6">
             <div className="flex items-center justify-between mb-6">
@@ -327,7 +377,7 @@ const certifications = [
             <div className="text-center p-4 bg-blue-900/20 rounded-lg">
                 <p className="text-3xl font-bold text-blue-400">{metrics.projects.total}</p>
                 <p className="text-blue-400/60 text-sm mt-2">Total</p>
-            </div>
+            </div><ParticleEffect />
             <div className="text-center p-4 bg-blue-900/20 rounded-lg">
                 <p className="text-3xl font-bold text-blue-400">{metrics.projects.deployed}</p>
                 <p className="text-blue-400/60 text-sm mt-2">Deployed</p>
@@ -365,12 +415,12 @@ const certifications = [
                 {certifications.map((cert, index) => (
                   <CertificationCard key={index} {...cert} />
                 ))}
-              </div>
+              </div><ParticleEffect />
             </Card>
           </div>
 
           {/* Bottom Row - Full Width Stats */}
-
+          <ParticleEffect />
         </div>
       </div>
     </section>
