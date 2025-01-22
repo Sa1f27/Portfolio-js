@@ -62,6 +62,13 @@ const projects = [
     technologies: ["OpenAI", "Weaviate", "Databricks", "RDFLib", "Pandas"],
     github: "https://github.com/Sa1f27/GraphRAG"
   },
+{
+  "title": "Crawler - RAG Agent",
+  "description": "An intelligent documentation crawler and RAG (Retrieval-Augmented Generation) agent that transforms documentation websites into an interactive knowledge base. Built with Pydantic AI and Supabase, this system crawls documentation, indexes it in a vector database, and provides AI-powered answers to user queries using contextually relevant documentation chunks.",
+  "image": "https://drive.google.com/file/d/16Qeqh8x-VpB7eZHWSwlBNVp0buasitIp/preview",
+  "technologies": ["Crawl4AI", "OpenAI", "Supabase", "FastAPI", "Pydantic"],
+  "github": "https://github.com/Sa1f27/Crawler-AI.git"
+}
   {
     title: "Vocal-Diagnose",
     description: "VocalDiagnose uses AI to analyze voice patterns, enabling early disease detection with over 90% accuracy, revolutionizing accessible and cost-effective health screening.",
