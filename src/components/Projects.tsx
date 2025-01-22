@@ -68,7 +68,7 @@ const projects = [
   "image": "https://drive.google.com/file/d/16Qeqh8x-VpB7eZHWSwlBNVp0buasitIp/preview",
   "technologies": ["Crawl4AI", "OpenAI", "Supabase", "FastAPI", "Pydantic"],
   "github": "https://github.com/Sa1f27/Crawler-AI.git"
-}
+},
   {
     title: "Vocal-Diagnose",
     description: "VocalDiagnose uses AI to analyze voice patterns, enabling early disease detection with over 90% accuracy, revolutionizing accessible and cost-effective health screening.",
