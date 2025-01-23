@@ -69,20 +69,17 @@ export default function Chatbot() {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-// Your bio information
 const bioInfo = `
 Mohammed Huzaifah
 
 AI/ML Engineer & Computer Science Researcher
 
 Personal Information
-
 - Full Name: Mohammed Huzaifah
 - Gender: Male
 - Date of Birth: 27th March 2003
 - Age: 22
 - Location: Hyderabad, Telangana, India
-
 - Relationship Status: Single
 - Languages:
   - English (Professional)
@@ -91,103 +88,89 @@ Personal Information
   - Telugu (Conversational)
 
 Professional Summary
-
 Mohammed Huzaifah is an innovative Machine Learning Engineer specializing in cutting-edge AI technologies, MLOps, and scalable system design. Currently pursuing a Bachelor of Engineering in Computer Science with AI & ML specialization (CGPA: 8.6), he combines academic excellence with practical implementation experience. Known for developing production-ready AI solutions that solve real-world challenges.
 
 Core Technical Competencies
-
-Advanced AI Systems
-
-Core Competencies
-
-AI & Machine Learning
-
-Large Language Models: Fine-tuning, RAG systems, prompt engineering
-Neural Networks: CNNs, RNNs, GANs, Transformers
-Computer Vision: Object detection, segmentation, OpenCV
-NLP: Text classification, sentiment analysis, text generation
-
-
-Generative AI & Emerging Technologies
-
-LLM Integration: DeepSeek V3, Qwen, Llama, Gemini 2.0 Flash, Claude Haiku
-Multi-modal Models: Text-to-image synthesis, voice processing
-AI Agents: Tool-using AI, autonomous systems, LangGraph
-Vector Databases: Semantic search, embeddings
-
-
-
-Technical Stack:
-  Primary: Python
-  Secondary: JavaScript, C++, Java
-  Web: HTML, CSS
-
-Frameworks & Libraries:
-  ML/DL: TensorFlow, PyTorch, Scikit-learn, Keras, XGBoost, LGBoost
-  Data: Pandas, NumPy, Apache Spark
-  Visualization: Matplotlib, Seaborn, Plotly
-
-AI Tools:
-  Development: Bolt.new, Windsurf/Cursor
-  Frameworks: Pydantic AI, LangGraph (Fiowise prototype)
-  Search: Rrave, Firecrawi, Perplexity, SearchiAP
-
-Infrastructure:
-  Cloud: DigitalOcean, RunPod, AWS, Azure
-  Containerization: Docker
-  CI/CD: GitHub Actions
-  MLOps: MLflow, DVC, Jenkins
+- AI & Machine Learning
+  - Large Language Models: Fine-tuning, RAG systems, prompt engineering
+  - Neural Networks: CNNs, RNNs, GANs, Transformers
+  - Computer Vision: Object detection, segmentation, OpenCV
+  - NLP: Text classification, sentiment analysis, text generation
+- Generative AI & Emerging Technologies
+  - LLM Integration: DeepSeek V3, Qwen, Llama, Gemini 2.0 Flash, Claude Haiku
+  - Multi-modal Models: Text-to-image synthesis, voice processing
+  - AI Agents: Tool-using AI, autonomous systems, LangGraph
+  - Vector Databases: Semantic search, embeddings
+- Technical Stack:
+  - Primary: Python
+  - Secondary: JavaScript, C++, Java
+  - Web: HTML, CSS
+- Frameworks & Libraries:
+  - ML/DL: TensorFlow, PyTorch, Scikit-learn, Keras, XGBoost, LGBoost
+  - Data: Pandas, NumPy, Apache Spark
+  - Visualization: Matplotlib, Seaborn, Plotly
+- AI Tools:
+  - Development: Bolt.new, Windsurf/Cursor
+  - Frameworks: Pydantic AI, LangGraph (Fiowise prototype)
+  - Search: Rrave, Firecrawi, Perplexity, SearchiAP
+- Infrastructure:
+  - Cloud: DigitalOcean, RunPod, AWS, Azure
+  - Containerization: Docker
+  - CI/CD: GitHub Actions
+  - MLOps: MLflow, DVC, Jenkins
 
 Signature Projects:
+1. Graph-RAG
+   A Graph RAG (Retrieval-Augmented Generation) application combining Large Language Models (LLMs) with knowledge graphs to enhance the accuracy and explainability of Retrieval-Augmented Generation.  
+   - Tech Stack: OpenAI, Weaviate, Databricks, RDFLib, Pandas  
+   - GitHub: [Graph-RAG](https://github.com/Sa1f27/GraphRAG)  
 
-KidsCare-Pro (Pediatric Healthcare AI) 
-Developed end-to-end pediatric health monitoring system  
-Tech Stack: GPT-4, Med-PaLM, RAG with Weaviate  
-Features: Real-time health monitoring, predictive diagnostics  
-Impact: Serving over 1000 patients with a prediction accuracy of 95%.  
+2. Crawler - RAG Agent  
+   An intelligent documentation crawler and RAG (Retrieval-Augmented Generation) agent that transforms documentation websites into an interactive knowledge base. Built with Pydantic AI and Supabase, this system crawls documentation, indexes it in a vector database, and provides AI-powered answers to user queries using contextually relevant documentation chunks.  
+   - Tech Stack: Crawl4AI, OpenAI, Supabase, FastAPI, Pydantic  
+   - GitHub: [Crawler - RAG Agent](https://github.com/Sa1f27/Crawler-AI.git)  
 
-SoulScan (Disease Prediction) 
-Built advanced disease prediction platform  
-Stack: Mixtral 8x7B, "Python", "TensorFlow", "Flask", "MongoDB" 
-Features: Multi-modal disease detection and personalized health insights  
-Impact: Achieved a detection accuracy of 98%, deployed in three hospitals.  
+3. Vocal-Diagnose  
+   VocalDiagnose uses AI to analyze voice patterns, enabling early disease detection with over 90% accuracy, revolutionizing accessible and cost-effective health screening.  
+   - Tech Stack: Groq, TensorFlow, Librosa, Kaggle, Matplotlib, RandomForest  
+   - GitHub: [Vocal-Diagnose](https://github.com/Sa1f27/Vocal-Diagnose)  
 
-VocalDiagnose (Speech Analysis)  
-VocalDiagnose uses AI to analyze voice patterns, enabling early disease detection with over 90% accuracy, revolutionizing accessible and cost-effective health screening 
-Stack: Whisper, Wav2Vec, Custom CNNs, TensorFlow, Librosa, Kaggle, Matplotlib/Seaborn  
-Features: Real-time speech analysis with multilingual support  
-Impact: Reduced diagnosis time by 60%.  
+4. KidsCare-Pro  
+   AI-powered pediatric health solution for monitoring and predicting children's health conditions using advanced machine learning algorithms.  
+   - Tech Stack: Groq, TensorFlow, AWS, Matplotlib/Seaborn, LightGBM  
+   - GitHub: [KidsCare-Pro](https://github.com/Sa1f27/KidsCare-Pro)  
 
-DocHub (Governement Documentation) 
-Developed intelligent government services with document assistance, scheme navigation, and seamless application support 
-Stack: llama 3, RAG with Pinecone, MongoDB
-Features: Automated report generation and semantic search  
-Impact: Reduced documentation time by 75%.   
+5. Disease Diagnosis  
+   High-accuracy disease prediction platform utilizing deep learning and computer vision for early detection and diagnosis.  
+   - Tech Stack: PyTorch, Knn, TensorFlow, Matplotlib/Seaborn, Streamlit  
+   - GitHub: [Disease Diagnosis](https://github.com/Sa1f27/Disease-Prediction)  
 
-Education: Bachelor of Engineering in Computer Science (AI & ML)  
+6. DocHub-AI  
+   A RAG-based multi-agent AI platform revolutionizing access to government services with intelligent document assistance, scheme navigation, and seamless application support.  
+   - Tech Stack: Python, LLama, TensorFlow, Flask, BeautifulSoup, API  
+   - GitHub: [DocHub-AI](https://github.com/Sa1f27/DocHub-AI)  
 
-CGPA: 8.6/10  
-Expected Graduation: 2026
-Key Courses: Advanced ML, Deep Learning, NLP, Computer Vision  
+Education:  
+- Bachelor of Engineering in Computer Science (AI & ML)  
+  - CGPA: 8.6/10  
+  - Expected Graduation: 2026  
+  - Key Courses: Advanced ML, Deep Learning, NLP, Computer Vision  
 
 Professional Development:
-- LeetCode (170+ problems solved) 
-- Regular contributor open-source projects 
-- Frequent hackathon participant 
+- Solved 170+ problems on LeetCode  
+- Regular contributor to open-source projects  
+- Frequent hackathon participant  
 - Continuous learning through advanced AI courses  
 
 Contact Information:
-
-Email: huzaif027@gmail.com  
-Phone Numbers:
-- Primary: +91 6300940175 
-- Secondary: +91 9014038540  
+- Email: huzaif027@gmail.com  
+- Phone Numbers:
+  - Primary: +91 6300940175  
+  - Secondary: +91 9014038540  
 
 Professional Profiles:
-GitHub: github.com/Sa1f27  
-LinkedIn: linkedin.com/in/huzaifah-27o3  
-
-Location: Hyderabad, Telangana, India  
+- GitHub: [Sa1f27](https://github.com/Sa1f27)  
+- LinkedIn: [Mohammed Huzaifah](https://linkedin.com/in/huzaifah-27o3)  
 
 Personal Interests:
 - AI Research & Development  
@@ -197,18 +180,19 @@ Personal Interests:
 - Open Source Contributing  
 
 Current Status & Availability:
-Employment Status: Seeking Opportunities  
-Available From: Immediate   
+- Employment Status: Seeking Opportunities  
+- Available From: Immediate  
 
 Preferred Roles:
-- AI/ML Engineer   
-- Data Scientist Engineer   
-- MLOps Engineer   
+- AI/ML Engineer  
+- Data Scientist Engineer  
+- MLOps Engineer  
 
-Work Type: Internship, Freelance Projects, part time 
+Work Type: Internship, Freelance Projects, Part-time  
 
-References: Available upon request.
+References: Available upon request.  
 `;
+
 
 const askGroq = async (inputText: string) => {
   const prompt = `

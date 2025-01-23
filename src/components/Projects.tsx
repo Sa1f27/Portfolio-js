@@ -62,39 +62,39 @@ const projects = [
     technologies: ["OpenAI", "Weaviate", "Databricks", "RDFLib", "Pandas"],
     github: "https://github.com/Sa1f27/GraphRAG"
   },
-{
-  "title": "Crawler - RAG Agent",
-  "description": "An intelligent documentation crawler and RAG (Retrieval-Augmented Generation) agent that transforms documentation websites into an interactive knowledge base. Built with Pydantic AI and Supabase, this system crawls documentation, indexes it in a vector database, and provides AI-powered answers to user queries using contextually relevant documentation chunks.",
-  "image": "https://drive.google.com/file/d/16Qeqh8x-VpB7eZHWSwlBNVp0buasitIp/preview",
-  "technologies": ["Crawl4AI", "OpenAI", "Supabase", "FastAPI", "Pydantic"],
-  "github": "https://github.com/Sa1f27/Crawler-AI.git"
-},
+  {
+    title: "Crawler - RAG Agent",
+    description: "An intelligent documentation crawler and RAG (Retrieval-Augmented Generation) agent that transforms documentation websites into an interactive knowledge base. Built with Pydantic AI and Supabase, this system crawls documentation, indexes it in a vector database, and provides AI-powered answers to user queries using contextually relevant documentation chunks.",
+    image: "https://drive.google.com/file/d/16Qeqh8x-VpB7eZHWSwlBNVp0buasitIp/preview",
+    technologies: ["Crawl4AI", "OpenAI", "Supabase", "FastAPI", "Pydantic"],
+    github: "https://github.com/Sa1f27/Crawler-AI.git"
+  },
   {
     title: "Vocal-Diagnose",
     description: "VocalDiagnose uses AI to analyze voice patterns, enabling early disease detection with over 90% accuracy, revolutionizing accessible and cost-effective health screening.",
     image: "https://drive.google.com/file/d/18yrfazKk6ELQBW3FFSGagCuhD7zHpBk0/preview",
-    technologies: ["Groq", "TensorFlow", "Librosa", "Kaggle", "Matplotlib/Seaborn"],
+    technologies: ["Groq", "TensorFlow", "Librosa", "Kaggle", "Matplotlib", "RandomForest"],
     github: "https://github.com/Sa1f27/Vocal-Diagnose"
   },
   {
     title: "KidsCare-Pro",
     description: "AI-powered pediatric health solution for monitoring and predicting children's health conditions using advanced machine learning algorithms.",
     image: "https://drive.google.com/file/d/1y1BM_AuZdYElUcTwe_4aHCj_FIgSEXbf/preview",
-    technologies: ["Groq", "TensorFlow", "AWS", "Matplotlib/Seaborn"],
+    technologies: ["Groq", "TensorFlow", "AWS", "Matplotlib/Seaborn", "LightGBM"],
     github: "https://github.com/Sa1f27/KidsCare-Pro"
   },
   {
     title: "Disease Diagnosis",
     description: "High-accuracy disease prediction platform utilizing deep learning and computer vision for early detection and diagnosis.",
     image: "https://drive.google.com/file/d/1EgNXnHxXwoG8-2zyOTeAU7EP8umrixId/preview",
-    technologies: ["PyTorch", "Knn", "TensorFlow", "Matplotlib/Seaborn"],
+    technologies: ["PyTorch", "Knn", "TensorFlow", "Matplotlib/Seaborn", "Streamlit"],
     github: "https://github.com/Sa1f27/Disease-Prediction"
   },
   {
     title: "DocHub-AI",
     description: "A RAG-based multi-agent AI platform revolutionizing access to government services with intelligent document assistance, scheme navigation, and seamless application support.",
     image: "https://drive.google.com/file/d/1LWc40C-oVPoFlt9kWeSTvnvFIClBbdtP/preview",
-    technologies: ["Python","LLama", "TensorFlow", "Flask", "BeautifulSoup"],
+    technologies: ["Python","LLama", "TensorFlow", "Flask", "BeautifulSoup", "API"],
     github: "https://github.com/Sa1f27/DocHub-AI"
   }
 ];
