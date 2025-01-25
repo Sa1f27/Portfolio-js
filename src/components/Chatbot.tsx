@@ -193,7 +193,8 @@ Professional Metrics & Achievements
   - Featured Projects: 6
 
 Education:  
-- Bachelor of Engineering in Computer Science (AI & ML)  
+- Bachelor of Engineering in Computer Science (AI & ML)
+- University: Lords Institute of Engineering & Technology (LIET) 
   - CGPA: 8.6/10  
   - Expected Graduation: 2026  
   - Key Courses: Advanced ML, Deep Learning, NLP, Computer Vision  
