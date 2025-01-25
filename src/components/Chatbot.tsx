@@ -99,19 +99,19 @@ Core Technical Competencies
 - Generative AI & Emerging Technologies
   - LLM Integration: DeepSeek V3, Qwen, Llama, Gemini 2.0 Flash, Claude Haiku
   - Multi-modal Models: Text-to-image synthesis, voice processing
-  - AI Agents: Tool-using AI, autonomous systems, LangGraph
+  - AI Agents: LangFlow, autonomous systems, LangGraph
   - Vector Databases: Semantic search, embeddings
 - Technical Stack:
   - Primary: Python
-  - Secondary: JavaScript, C++, Java
+  - Secondary: React.js, TypeScript , Java
   - Web: HTML, CSS
 - Frameworks & Libraries:
   - ML/DL: TensorFlow, PyTorch, Scikit-learn, Keras, XGBoost, LGBoost
-  - Data: Pandas, NumPy, Apache Spark
+  - Data: Pandas, SQL, NumPy, Apache Spark
   - Visualization: Matplotlib, Seaborn, Plotly
 - AI Tools:
   - Development: Bolt.new, Windsurf/Cursor
-  - Frameworks: Pydantic AI, LangGraph (Fiowise prototype)
+  - Frameworks: Pydantic AI, LangGraph
   - Search: Rrave, Firecrawi, Perplexity, SearchiAP
 - Infrastructure:
   - Cloud: DigitalOcean, RunPod, AWS, Azure
@@ -149,6 +149,48 @@ Signature Projects:
    A RAG-based multi-agent AI platform revolutionizing access to government services with intelligent document assistance, scheme navigation, and seamless application support.  
    - Tech Stack: Python, LLama, TensorFlow, Flask, BeautifulSoup, API  
    - GitHub: [DocHub-AI](https://github.com/Sa1f27/DocHub-AI)  
+
+Certifications & Professional Development
+1. Machine Learning Engineering Certification
+   - Issued by: Udemy
+   - Year: 2024
+   - Verification: [ML Engineering Certificate](https://github.com/Sa1f27/Certs/blob/25349ede0b3932d2dd77715f5bc324ef5c1173d2/Certificates/ML-Udemy%20Certificate.pdf)
+
+2. Hackathon Achievements
+   - HackRevolution Hackathon (MJCET, 2025)
+     - Certificate: [HackRevolution Certificate](https://github.com/Sa1f27/Certs/blob/25349ede0b3932d2dd77715f5bc324ef5c1173d2/Certificates/HackRev-Certificate.jpg)
+   - CodeFest Hackathon (Edventure-Park, 2024)
+     - Certificate: [CodeFest Hackathon Certificate](https://github.com/Sa1f27/Certs/blob/25349ede0b3932d2dd77715f5bc324ef5c1173d2/Certificates/CodeFest-Certificate.jpg)
+   - Hackprix Hackathon (LIET, 2024)
+     - Certificate: [Hackprix Hackathon Certificate](https://github.com/Sa1f27/Certs/blob/25349ede0b3932d2dd77715f5bc324ef5c1173d2/Certificates/Hackprix-Certificate.pdf)
+   - Imagine Hackathon (PanIIT, 2024)
+     - Certificate: [Imagine Hackathon Certificate](https://github.com/Sa1f27/Certs/blob/25349ede0b3932d2dd77715f5bc324ef5c1173d2/Certificates/Imagine-Certificate.jpg)
+
+3. Professional Internships
+   - RAM Infotech Internship (2024)
+     - Certificate: [RAM Infotech Internship Certificate](https://github.com/Sa1f27/Certs/blob/65741ed34d0cad506b0b8c878faf12859fb8b950/Certificates/Ram%20Infotech-Internship.jpg)
+   - CodSoft Internship (2024)
+     - Certificate: [CodSoft Internship Certificate](https://github.com/Sa1f27/Certs/blob/25349ede0b3932d2dd77715f5bc324ef5c1173d2/Certificates/CodSoft-Internship.pdf)
+
+4. Data Science & AI Competitions
+   - DataNyx Datathon (MJCET, 2024)
+     - Certificate: [DataNyx Datathon Certificate](https://github.com/Sa1f27/Certs/blob/25349ede0b3932d2dd77715f5bc324ef5c1173d2/Certificates/DataNyx-Certificate.jpg)
+
+Professional Metrics & Achievements
+- LeetCode Problem Solving:
+  - Total Problems Solved: 170+
+  - Breakdown:
+    * Easy Problems: 110+
+    * Medium Problems: 60+
+    * Hard Problems: 10+
+- Hackathons:
+  - Total Attended: 6
+  - Awards Won: 1
+  - Upcoming Hackathons: 2
+- Project Portfolio:
+  - Total Projects: 32
+  - Deployed Projects: 8
+  - Featured Projects: 6
 
 Education:  
 - Bachelor of Engineering in Computer Science (AI & ML)  
@@ -190,7 +232,7 @@ Preferred Roles:
 
 Work Type: Internship, Freelance Projects, Part-time  
 
-References: Available upon request.  
+References: Available upon request.
 `;
 
 

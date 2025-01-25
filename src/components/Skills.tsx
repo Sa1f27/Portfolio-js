@@ -224,7 +224,7 @@ export default function Skills() {
             );
           })}
         </motion.div>
-      </div><ParticleEffect />
+      </div>
     </section>
   );
 }

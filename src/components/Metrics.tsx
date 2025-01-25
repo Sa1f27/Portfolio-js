@@ -356,7 +356,7 @@ const certifications = [
             <div className="text-center p-4 bg-blue-900/20 rounded-lg">
                 <p className="text-3xl font-bold text-blue-400">{metrics.hackathons.attended}</p>
                 <p className="text-blue-400/60 text-sm mt-2">Attended</p>
-            </div><ParticleEffect />
+            </div>
             <div className="text-center p-4 bg-blue-900/20 rounded-lg">
                 <p className="text-3xl font-bold text-blue-400">{metrics.hackathons.won}</p>
                 <p className="text-blue-400/60 text-sm mt-2">Won</p>
@@ -415,12 +415,12 @@ const certifications = [
                 {certifications.map((cert, index) => (
                   <CertificationCard key={index} {...cert} />
                 ))}
-              </div><ParticleEffect />
+              </div>
             </Card>
           </div>
 
           {/* Bottom Row - Full Width Stats */}
-          <ParticleEffect />
+          
         </div>
       </div>
     </section>
