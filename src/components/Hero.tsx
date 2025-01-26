@@ -187,7 +187,7 @@ export default function Hero() {
   ];
 
   const handleDownloadResume = () => {
-    const resumeUrl = "https://drive.google.com/file/d/1bMPNbiuf0V9dPlLm2ORS3rS7-RrrQpzy";
+    const resumeUrl = "https://drive.google.com/file/d/1W7QQB2b55WLe0hbBd3kF04LZuo2vCk2j";
     window.open(resumeUrl, '_blank');
   };
 
@@ -321,7 +321,7 @@ export default function Hero() {
               </button>
             </div>
             <iframe
-              src="https://drive.google.com/file/d/1bMPNbiuf0V9dPlLm2ORS3rS7-RrrQpzy/preview"
+              src="https://drive.google.com/file/d/1W7QQB2b55WLe0hbBd3kF04LZuo2vCk2j/preview"
               className="w-full h-[80vh] rounded-lg"
               allow="autoplay"
             />
