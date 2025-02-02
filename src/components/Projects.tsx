@@ -139,7 +139,7 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="relative min-h-screen py-24 overflow-hidden">
+    <section id="projects" className="relative min-h-screen py-16 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-black to-violet-950/30" />
       
@@ -156,12 +156,12 @@ export default function Projects() {
         }}
       />
 
-      <div className="relative z-10 container mx-auto px-6 lg:px-8">
+      <div className="relative z-10 container mx-auto px-4 lg:px-6">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
           transition={{ duration: 0.8 }}
-          className="text-5xl font-bold mb-20 text-center bg-gradient-to-r from-blue-400 to-violet-400 text-transparent bg-clip-text"
+          className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-blue-400 to-violet-400 text-transparent bg-clip-text"
         >
           Featured Projects
         </motion.h2>
@@ -171,7 +171,7 @@ export default function Projects() {
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12 max-w-[1400px] mx-auto"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 max-w-[1400px] mx-auto"
         >
           {projects.map((project, index) => (
             <motion.div
@@ -182,7 +182,7 @@ export default function Projects() {
               onMouseLeave={() => setHoveredProject(null)}
             >
               <div className={`
-                rounded-xl overflow-hidden
+                rounded-lg overflow-hidden
                 backdrop-blur-sm border border-blue-500/20 
                 bg-blue-950/20 h-full
                 transition-all duration-500 ease-out
@@ -193,11 +193,11 @@ export default function Projects() {
                               opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
                 
                 {/* Project content */}
-                <div className="p-6 lg:p-8 h-full flex flex-col">
-                  <div className="relative mb-6">
+                <div className="p-4 h-full flex flex-col">
+                  <div className="relative mb-4">
                     <iframe
                       src={project.image}
-                      className="w-full aspect-video rounded-lg transform group-hover:scale-[1.02] transition-transform duration-500"
+                      className="w-full aspect-video rounded-md transform group-hover:scale-[1.02] transition-transform duration-500"
                       allow="autoplay"
                       frameBorder="0"
                     ></iframe>
@@ -207,23 +207,23 @@ export default function Projects() {
                                 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
 
-                  <h3 className="text-2xl font-semibold text-blue-300 mb-4 group-hover:text-blue-200 
+                  <h3 className="text-lg font-semibold text-blue-300 mb-2 group-hover:text-blue-200 
                               transition-colors duration-300">
                     {project.title}
                   </h3>
 
-                  <p className="text-violet-300 mb-6 line-clamp-3 group-hover:text-violet-200 
+                  <p className="text-sm text-violet-300 mb-4 line-clamp-2 group-hover:text-violet-200 
                               transition-colors duration-300 flex-grow">
                     {project.description}
                   </p>
 
-                  <div className="space-y-6">
-                    <div className="flex flex-wrap gap-2">
+                  <div className="space-y-4">
+                    <div className="flex flex-wrap gap-1">
                       {project.technologies.map((tech, techIndex) => (
                         <span
                           key={techIndex}
-                          className="px-3 py-1 bg-violet-500/20 border border-violet-500/30 
-                                  text-blue-200 rounded-full text-sm transform hover:scale-105 
+                          className="px-2 py-0.5 bg-violet-500/20 border border-violet-500/30 
+                                  text-blue-200 rounded-full text-xs transform hover:scale-105 
                                   transition-all duration-300"
                         >
                           {tech}
@@ -239,12 +239,12 @@ export default function Projects() {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg 
-                                bg-blue-500/20 border border-blue-500/30 text-blue-300 
+                        className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md 
+                                bg-blue-500/20 border border-blue-500/30 text-blue-300 text-sm
                                 hover:text-blue-200 hover:bg-blue-500/30 hover:border-blue-400/50 
                                 transition-all duration-300"
                       >
-                        <Github size={20} />
+                        <Github size={16} />
                         View Code
                       </a>
                     </motion.div>

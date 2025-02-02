@@ -6,8 +6,9 @@ const navItems = [
   { label: 'About', href: '#about', icon: '01' },
   { label: 'Skills', href: '#skills', icon: '02' },
   { label: 'Projects', href: '#projects', icon: '03' },
-  { label: 'Metrics', href: '#metrics', icon: '04' },
-  { label: 'Contact', href: '#contact', icon: '05' },
+  { label: 'Blogs', href: '#blogs', icon: '04' },
+  { label: 'Metrics', href: '#metrics', icon: '05' },
+  { label: 'Contact', href: '#contact', icon: '06' },
 ];
 
 export default function Navbar() {

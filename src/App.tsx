@@ -7,6 +7,7 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Chatbot from './components/Chatbot';
 import MetricsSection from './components/Metrics';
+import Blogs from './components/Blogs';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <About />
       <Skills />
       <Projects />
+      <Blogs />
       <MetricsSection />
       <Contact />
     </div>
