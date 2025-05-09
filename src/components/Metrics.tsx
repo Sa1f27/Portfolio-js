@@ -166,9 +166,9 @@ const MetricsSection = () => {
   const metrics = {
     leetcode: {
       problems: {
-        easy: '110+',
-        medium: "60+",
-        hard: "10+"
+        easy: '120+',
+        medium: "65+",
+        hard: "12+"
       },
       history: Array.from({ length: 12 }, (_, i) => ({
         month: new Date(2024, i).toLocaleString('default', { month: 'short' }),
@@ -181,7 +181,7 @@ const MetricsSection = () => {
       upcoming: 2
     },
     projects: {
-      total: 32,
+      total: 45,
       deployed: 8,
       featured: 6
     }
@@ -194,14 +194,14 @@ const MetricsSection = () => {
         const githubJson = await githubResponse.json();
         setGithubData({
           username: 'Sa1f27',
-          contributions: "500+",
+          contributions: "550+",
           repos: githubJson.public_repos,
           followers: githubJson.followers
         });
 
         setLeetcodeData({
           username: 'huzaif027',
-          totalSolved: "170+" // Replace with actual data
+          totalSolved: "195+" // Replace with actual data
         });
       } catch (error) {
         console.error('Error fetching data:', error);
