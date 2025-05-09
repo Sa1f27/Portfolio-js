@@ -76,164 +76,97 @@ AI/ML Engineer & Computer Science Researcher
 
 Personal Information
 - Full Name: Mohammed Huzaifah
-- Gender: Male
-- Date of Birth: 27th March 2003
-- Age: 22
+- Date of Birth: 27 March 2003 (Age: 22)
 - Location: Hyderabad, Telangana, India
-- Relationship Status: Single
 - Languages:
-  - English (Professional)
-  - Hindi (Fluent)
-  - Urdu (Native)
-  - Telugu (Conversational)
+  • English (Professional)  
+  • Hindi (Fluent)  
+  • Urdu (Native)  
+  • Telugu (Conversational)
+- Contact:
+  • Email: huzaif027@gmail.com  
+  • Phone: +91 6300940175  
+  • GitHub: https://github.com/Sa1f27  
+  • LinkedIn: https://linkedin.com/in/huzaifah-27o3  
+  • Portfolio: https://portfolio-huz.vercel.app/
 
 Professional Summary
-Mohammed Huzaifah is an innovative Machine Learning Engineer specializing in cutting-edge AI technologies, MLOps, and scalable system design. Currently pursuing a Bachelor of Engineering in Computer Science with AI & ML specialization (CGPA: 8.6), he combines academic excellence with practical implementation experience. Known for developing production-ready AI solutions that solve real-world challenges.
+Innovative AI/ML engineer with hands-on expertise in building production-grade architectures for LLMs, RAG systems, NLP pipelines, vector search, computer vision, and real-time voice processing. Proven track record of delivering scalable MLOps workflows, autonomous data-extraction agents, and fraud-resistant interview platforms. Skilled at optimizing cost, latency, and accuracy across structured, semi-structured, and unstructured datasets.
 
 Core Technical Competencies
-- AI & Machine Learning
-  - Large Language Models: Fine-tuning, RAG systems, prompt engineering
-  - Neural Networks: CNNs, RNNs, GANs, Transformers
-  - Computer Vision: Object detection, segmentation, OpenCV
-  - NLP: Text classification, sentiment analysis, text generation
-- Generative AI & Emerging Technologies
-  - LLM Integration: DeepSeek V3, Qwen, Llama, Gemini 2.0 Flash, Claude Haiku
-  - Multi-modal Models: Text-to-image synthesis, voice processing
-  - AI Agents: LangFlow, autonomous systems, LangGraph
-  - Vector Databases: Semantic search, embeddings
-- Technical Stack:
-  - Primary: Python
-  - Secondary: React.js, TypeScript , Java
-  - Web: HTML, CSS
-- Frameworks & Libraries:
-  - ML/DL: TensorFlow, PyTorch, Scikit-learn, Keras, XGBoost, LGBoost
-  - Data: Pandas, SQL, NumPy, Apache Spark
-  - Visualization: Matplotlib, Seaborn, Plotly
-- AI Tools:
-  - Development: Bolt.new, Windsurf/Cursor
-  - Frameworks: Pydantic AI, LangGraph
-  - Search: Rrave, Firecrawi, Perplexity, SearchiAP
-- Infrastructure:
-  - Cloud: DigitalOcean, RunPod, AWS, Azure
-  - Containerization: Docker
-  - CI/CD: GitHub Actions
-  - MLOps: MLflow, DVC, Jenkins
+- Large Language Models & RAG: fine-tuning, prompt engineering, embedding strategies  
+- Neural Architectures: CNNs, RNNs, GANs, Transformers (BERT, GPT-style)  
+- Computer Vision: YOLO object detection, segmentation, OpenCV pipelines  
+- NLP: classification, sentiment analysis, summarization, generative text  
+- Generative AI & Agents: LangChain, LangFlow, autonomous multi-agent systems  
+- Vector Databases & Semantic Search: Pinecone, Chroma, Faiss  
+- Real-Time Voice: STT, TTS, custom voice cloning (90%+ transcription accuracy, lifelike synthesis)  
+- MLOps & Infrastructure: Docker, MLflow, DVC, CI/CD (GitHub Actions, Jenkins), AWS ML, GCP AI Platform  
+- Data Platforms: MongoDB (cross-region replication), SQL Server, PostgreSQL, Apache Spark  
+- Web & APIs: FastAPI, Django, REST, WebSockets, token-based auth, rate-limiting, structured logging  
 
-Signature Projects:
-1. Graph-RAG
-   A Graph RAG (Retrieval-Augmented Generation) application combining Large Language Models (LLMs) with knowledge graphs to enhance the accuracy and explainability of Retrieval-Augmented Generation.  
-   - Tech Stack: OpenAI, Weaviate, Databricks, RDFLib, Pandas  
-   - GitHub: [Graph-RAG](https://github.com/Sa1f27/GraphRAG)  
+Work Experience
+AI Developer Intern (Full-time, On-site)  
+Lanciere Technologies | Feb 2025 – Present  
+- Engineered AI-driven interview automation: resume parsing + generative assessments → 40% faster hiring cycles  
+- Built custom YOLO object detection with 94% accuracy on domain-specific datasets  
+- Architected fraud-resistant interview system with real-time voice analysis, visual monitoring, and behavioral verification  
+- Developed adaptive educational platform: video lecture analysis → daily practice + weekly assessments  
+- Implemented STT, TTS, and voice-cloning models for seamless AI-to-human dialogue  
+- Designed backend on MongoDB & SQL Server with AWS/GCP replication for 99.9% uptime  
+- Exposed FastAPI endpoints with token auth, rate limits, comprehensive logging & monitoring  
 
-2. Crawler - RAG Agent  
-   An intelligent documentation crawler and RAG (Retrieval-Augmented Generation) agent that transforms documentation websites into an interactive knowledge base. Built with Pydantic AI and Supabase, this system crawls documentation, indexes it in a vector database, and provides AI-powered answers to user queries using contextually relevant documentation chunks.  
-   - Tech Stack: Crawl4AI, OpenAI, Supabase, FastAPI, Pydantic  
-   - GitHub: [Crawler - RAG Agent](https://github.com/Sa1f27/Crawler-AI.git)  
+Signature Projects
+1. **Graph-RAG**  
+   Enhanced RAG search by integrating LLMs with knowledge graphs → 90% retrieval accuracy.  
+   Tech: OpenAI, Weaviate, Databricks, RDFLib, Pandas  
+   GitHub: https://github.com/Sa1f27/GraphRAG  
 
-3. Vocal-Diagnose  
-   VocalDiagnose uses AI to analyze voice patterns, enabling early disease detection with over 90% accuracy, revolutionizing accessible and cost-effective health screening.  
-   - Tech Stack: Groq, TensorFlow, Librosa, Kaggle, Matplotlib, RandomForest  
-   - GitHub: [Vocal-Diagnose](https://github.com/Sa1f27/Vocal-Diagnose)  
+2. **Crawler-RAG Agent**  
+   AI documentation crawler + RAG agent indexing hundreds of sites into vector DB for contextual Q&A.  
+   Tech: Crawl4AI, OpenAI, Supabase, FastAPI, Pydantic  
+   GitHub: https://github.com/Sa1f27/Crawler-AI  
 
-4. KidsCare-Pro  
-   AI-powered pediatric health solution for monitoring and predicting children's health conditions using advanced machine learning algorithms.  
-   - Tech Stack: Groq, TensorFlow, AWS, Matplotlib/Seaborn, LightGBM  
-   - GitHub: [KidsCare-Pro](https://github.com/Sa1f27/KidsCare-Pro)  
+3. **Vocal-Diagnose**  
+   Voice-pattern analysis for early disease detection (90%+ accuracy).  
+   Tech: Groq API, TensorFlow, Librosa, RandomForest  
 
-5. Disease Diagnosis  
-   High-accuracy disease prediction platform utilizing deep learning and computer vision for early detection and diagnosis.  
-   - Tech Stack: PyTorch, Knn, TensorFlow, Matplotlib/Seaborn, Streamlit  
-   - GitHub: [Disease Diagnosis](https://github.com/Sa1f27/Disease-Prediction)  
+4. **KidsCare-Pro**  
+   Pediatric health monitoring and prediction using ML algorithms.  
+   Tech: Groq, TensorFlow, AWS SageMaker, LightGBM  
 
-6. DocHub-AI  
-   A RAG-based multi-agent AI platform revolutionizing access to government services with intelligent document assistance, scheme navigation, and seamless application support.  
-   - Tech Stack: Python, LLama, TensorFlow, Flask, BeautifulSoup, API  
-   - GitHub: [DocHub-AI](https://github.com/Sa1f27/DocHub-AI)  
+5. **Disease Diagnosis Platform**  
+   Deep-learning & CV for automated disease screening.  
+   Tech: PyTorch, k-NN, Streamlit  
 
-Certifications & Professional Development
-1. Machine Learning Engineering Certification
-   - Issued by: Udemy
-   - Year: 2024
-   - Verification: [ML Engineering Certificate](https://github.com/Sa1f27/Certs/blob/25349ede0b3932d2dd77715f5bc324ef5c1173d2/Certificates/ML-Udemy%20Certificate.pdf)
+6. **DocHub-AI**  
+   Multi-agent RAG platform for intelligent document assistance & government service navigation.  
+   Tech: LLama, Flask, BeautifulSoup  
 
-2. Hackathon Achievements
-   - HackRevolution Hackathon (MJCET, 2025)
-     - Certificate: [HackRevolution Certificate](https://github.com/Sa1f27/Certs/blob/25349ede0b3932d2dd77715f5bc324ef5c1173d2/Certificates/HackRev-Certificate.jpg)
-   - CodeFest Hackathon (Edventure-Park, 2024)
-     - Certificate: [CodeFest Hackathon Certificate](https://github.com/Sa1f27/Certs/blob/25349ede0b3932d2dd77715f5bc324ef5c1173d2/Certificates/CodeFest-Certificate.jpg)
-   - Hackprix Hackathon (LIET, 2024)
-     - Certificate: [Hackprix Hackathon Certificate](https://github.com/Sa1f27/Certs/blob/25349ede0b3932d2dd77715f5bc324ef5c1173d2/Certificates/Hackprix-Certificate.pdf)
-   - Imagine Hackathon (PanIIT, 2024)
-     - Certificate: [Imagine Hackathon Certificate](https://github.com/Sa1f27/Certs/blob/25349ede0b3932d2dd77715f5bc324ef5c1173d2/Certificates/Imagine-Certificate.jpg)
+Certifications & Hackathons
+- Udemy Machine Learning Engineering (2024)  
+- RAM Infotech Internship Certificate (2024)  
+- CodSoft Internship Certificate (2024)  
+- Hackathon Podiums: HackRevolution ’25, CodeFest ’24, Hackprix ’24, Hackprix ’25, Imagine ’24  
+- DataNyx Datathon (MJCET ’24) awardee  
 
-3. Professional Internships
-   - RAM Infotech Internship (2024)
-     - Certificate: [RAM Infotech Internship Certificate](https://github.com/Sa1f27/Certs/blob/65741ed34d0cad506b0b8c878faf12859fb8b950/Certificates/Ram%20Infotech-Internship.jpg)
-   - CodSoft Internship (2024)
-     - Certificate: [CodSoft Internship Certificate](https://github.com/Sa1f27/Certs/blob/25349ede0b3932d2dd77715f5bc324ef5c1173d2/Certificates/CodSoft-Internship.pdf)
+Professional Metrics
+- **LeetCode:** 190+ solved (110 Easy, 60 Medium, 20 Hard)  
+- **GitHub:** 550+ contributions, 45+ repos  
+- **Hackathons:** 6+ attended, 2 podium finishes  
+- **Projects Deployed:** 8 till now
 
-4. Data Science & AI Competitions
-   - DataNyx Datathon (MJCET, 2024)
-     - Certificate: [DataNyx Datathon Certificate](https://github.com/Sa1f27/Certs/blob/25349ede0b3932d2dd77715f5bc324ef5c1173d2/Certificates/DataNyx-Certificate.jpg)
+Education
+B.E. in Computer Science (AI & ML), CGPA 8.5/10  
+Lords Institute of Engineering & Technology | Expected May 2026  
 
-Professional Metrics & Achievements
-- LeetCode Problem Solving:
-  - Total Problems Solved: 170+
-  - Breakdown:
-    * Easy Problems: 110+
-    * Medium Problems: 60+
-    * Hard Problems: 10+
-- Hackathons:
-  - Total Attended: 6
-  - Awards Won: 1
-  - Upcoming Hackathons: 2
-- Project Portfolio:
-  - Total Projects: 32
-  - Deployed Projects: 8
-  - Featured Projects: 6
+Personal Interests
+AI research & open-source contributions, competitive programming, football (Real Madrid fan), tech blogging  
 
-Education:  
-- Bachelor of Engineering in Computer Science (AI & ML)
-- University: Lords Institute of Engineering & Technology (LIET) 
-  - CGPA: 8.6/10  
-  - Expected Graduation: 2026  
-  - Key Courses: Advanced ML, Deep Learning, NLP, Computer Vision  
-
-Professional Development:
-- Solved 170+ problems on LeetCode  
-- Regular contributor to open-source projects  
-- Frequent hackathon participant  
-- Continuous learning through advanced AI courses  
-
-Contact Information:
-- Email: huzaif027@gmail.com  
-- Phone Numbers:
-  - Primary: +91 6300940175  
-  - Secondary: +91 9014038540  
-
-Professional Profiles:
-- GitHub: [Sa1f27](https://github.com/Sa1f27)  
-- LinkedIn: [Mohammed Huzaifah](https://linkedin.com/in/huzaifah-27o3)  
-
-Personal Interests:
-- AI Research & Development  
-- Football (Real Madrid supporter)  
-- Competitive Programming  
-- Tech Blogging  
-- Open Source Contributing  
-
-Current Status & Availability:
-- Employment Status: Seeking Opportunities  
-- Available From: Immediate  
-
-Preferred Roles:
-- AI/ML Engineer  
-- Data Scientist Engineer  
-- MLOps Engineer  
-
-Work Type: Internship, Freelance Projects, Part-time  
-
-References: Available upon request.
+Current Status
+- Seeking full-time roles in AI/ML Engineering, Data Science, or MLOps  
+- Available immediately  
+- References upon request  
 `;
 
 
